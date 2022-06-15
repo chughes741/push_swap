@@ -12,9 +12,10 @@
 
 #include "push_swap.h"
 
-static int  valid_int(char **argv)
+static int	valid_int(char **argv)
 {
-	if (argv[0]) return (0);
+	if (argv[0])
+		return (0);
 	return (0);
 }
 
@@ -32,7 +33,6 @@ static int	dupe_input(char **argv)
 			if (ft_strcmp(argv[i], argv[j]))
 				return (1);
 		}
-
 	}
 	return (0);
 }
@@ -40,6 +40,7 @@ static int	dupe_input(char **argv)
 int	input_check(int argc, char **argv)
 {
 	int	err;
+
 	err = 0;
 	if (argc <= 1)
 		err = 1;
