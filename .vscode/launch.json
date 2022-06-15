@@ -4,7 +4,7 @@
             "name": "Debug push_swap",
             "type": "cppdbg",
             "request": "launch",
-            "program": "push_swap.out",
+            "program": "~/push_swap/push_swap.out",
             "args": ["1 2 3 4 5"],
             "stopAtEntry": true,
             "cwd": "~/push_swap/",
