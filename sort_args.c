@@ -14,5 +14,11 @@
 
 int	**sort_args(int argc, int **unsorted_set)
 {
-	return (NULL);
+	int	**sorted_set;
+	int	max_bits;
+
+	sorted_set = ft_calloc(argc, sizeof(int));
+	max_bits = find_max_bits(unsorted_set);
+	sorted_set = radix_sort(unsorted_set, max_bits);
+	return (sorted_set);
 }
