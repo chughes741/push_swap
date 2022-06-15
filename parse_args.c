@@ -14,5 +14,15 @@
 
 int	**parse_args(int argc, char **argv)
 {
-	return (NULL);
+	int	**unsorted_set;
+	int	i;
+
+	i = -1;
+	unsorted_set = ft_calloc(argc, sizeof(int *));
+	while (argv[++i + 1] && i < argc - 1)
+	{
+		unsorted_set[i] = ft_calloc(1, sizeof(int));
+		unsorted_set[i] = ft_atoi(argv[i + 1]);
+	}
+	return (unsorted_set);
 }
