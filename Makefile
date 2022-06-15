@@ -1,6 +1,6 @@
 
 
-NAME	=	push_swap
+NAME	=	push_swap.out
 LIBFT	=	libftprintf.a
 LDIR	=	ft_printf/
 

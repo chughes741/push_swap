@@ -10,10 +10,10 @@
                 "*.c",
                 "ft_printf/libftprintf.a",
                 "-o",
-                "push_swap"
+                "push_swap.out"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "~/push_swap/"
             },
             "problemMatcher": [
                 "$gcc"
