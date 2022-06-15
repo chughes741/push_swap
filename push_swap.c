@@ -12,6 +12,11 @@
 
 #include "push_swap.h"
 
-int main() {
-    ft_printf("Hello World!\n%i\n", ft_atoi("123"));
+// sa sb ss pa pb ra rb rr rra rrb rrr
+
+int	main(int argc, char *argv[])
+{
+	if (input_check(argc, argv) != 0)
+		exit(0);
+	return (0);
 }
