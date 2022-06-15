@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Debug push_swap",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "push_swap",
+            "args": ["1 2 3 4 5"],
+            "stopAtEntry": true,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "Build push_swap"
+        }
+    ],
+    "version": "2.0.0"
+}

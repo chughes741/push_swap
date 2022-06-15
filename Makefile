@@ -46,7 +46,9 @@ re: fclean all
 
 
 # Removes debug files
-dclean: fclean
+dclean:
+	@$(RM) $(NAME)
+	@$(RM) *.o
 	@$(RM) *.dSYM
 
 # Test function used with main
