@@ -1,4 +1,5 @@
-# Log files
+# VSC files
+c_cpp_properties.json
 *.log
 
 # Prerequisites
