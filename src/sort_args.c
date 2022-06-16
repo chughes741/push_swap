@@ -33,18 +33,10 @@ static void	radix_sort(int n, int *sorted_set, int *unsorted_set, int max_bits)
 			else
 				q0 = iappendf(q0, sorted_set[i]);
 		}
-		sorted_set = ijoinf(sorted_set, q0, q1);
+		ijoin(sorted_set, q0, q1);
 	}
 	return (sorted_set);
 }
-
-
-
-
-
-
-
-
 
 // Created a sorted version of an unsorted int array
 int	*sort_args(int argc, int *unsorted_set)
