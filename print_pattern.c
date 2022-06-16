@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	print_pattern(int **sort_pattern)
+void	print_pattern(int *sort_pattern)
 {
 	return ;
 }
