@@ -12,18 +12,6 @@
 
 #include "push_swap.h"
 
-#define SA 1<<0
-#define SB 1<<1
-#define SS 1<<2
-#define PA 1<<3
-#define PB 1<<4
-#define RA 1<<5
-#define RB 1<<6
-#define RR 1<<7
-#define RRA 1<<8
-#define RRB 1<<9
-#define RRR 1<<10
-
 int	main(int argc, char *argv[])
 {
 	int	**unsorted_set;
