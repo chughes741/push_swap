@@ -12,6 +12,7 @@
 
 #include "../push_swap.h"
 
+// Returns the highest order bit number in an array of ints
 static int	find_max_bits(int *unsorted_set)
 {
 	int	i;
@@ -32,12 +33,14 @@ static int	find_max_bits(int *unsorted_set)
 	return (count);
 }
 
-int	*radix_sort(int *unsorted_set, int max_bits)
+// Binary Radix sort of an int array into another array
+static void	radix_sort(int *sorted_set, int *unsorted_set, int max_bits)
 {
 	unsorted_set[0] = max_bits;
 	return (unsorted_set);
 }
 
+// Created a sorted version of an unsorted int array
 int	*sort_args(int argc, int *unsorted_set)
 {
 	int	*sorted_set;
@@ -45,6 +48,6 @@ int	*sort_args(int argc, int *unsorted_set)
 
 	sorted_set = ft_calloc(argc, sizeof(int));
 	max_bits = find_max_bits(unsorted_set);
-	sorted_set = radix_sort(unsorted_set, max_bits);
+	radix_sort(sorted_set, unsorted_set, max_bits);
 	return (sorted_set);
 }
