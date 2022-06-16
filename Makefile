@@ -33,11 +33,11 @@ clean:
 	@$(RM) $(OBJS)
 	@$(RM) $(LDIR)*.o
 	@$(RM) $(LDIR)libft/*.o
+	@$(RM) *.dSYM
 
 # Removes objects and executables
 fclean: clean
 	@$(RM) $(NAME)
-	@$(RM) *.dSYM
 #	@$(RM) $(LDIR)$(LIBFT)
 #	@$(RM) $(LDIR)libft/libft.a
 
