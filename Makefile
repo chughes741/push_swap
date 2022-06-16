@@ -9,7 +9,8 @@ CFLAGS	=	-Wall -Werror -Wextra
 AFLAGS	=	-rs
 RM 		=	rm -rf
 
-SRCS	=	*.c
+SRCS	=	ft_strcmp.c		get_pattern.c	input_check.c	parse_args.c	\
+			print_pattern.c	push_swap.c		sort_args.c
 OBJS	=	$(SRCS:.c=.o)
 
 
@@ -17,10 +18,10 @@ OBJS	=	$(SRCS:.c=.o)
 all: $(LDIR)/$(LIBFT) $(NAME)
 
 $(NAME): $(OBJS) $(LDIR)/$(LIBFT)
-	@$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDIR)$(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDIR)$(LIBFT)
 
 .c.o:
-	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
 
 $(LDIR)/$(LIBFT):
 	@$(MAKE) -C $(LDIR)
@@ -36,20 +37,12 @@ clean:
 # Removes objects and executables
 fclean: clean
 	@$(RM) $(NAME)
-	@$(RM) $(LIBFT)
-	@$(RM) $(LDIR)$(LIBFT)
-	@$(RM) $(LDIR)libft/libft.a
+	@$(RM) *.dSYM
+#	@$(RM) $(LDIR)$(LIBFT)
+#	@$(RM) $(LDIR)libft/libft.a
 
 # Removes objects and executables and remakes
 re: fclean all
-
-
-
-# Removes debug files
-dclean:
-	@$(RM) $(NAME)
-	@$(RM) *.o
-	@$(RM) *.dSYM
 
 # Test function used with main
 test: $(LDIR)/$(LIBFT)
