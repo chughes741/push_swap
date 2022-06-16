@@ -15,13 +15,13 @@ OBJS	=	$(SRCS:.c=.o)
 
 
 # Targets
-all: $(LDIR)/$(LIBFT) $(NAME)
+all: $(LDIR)/$(LIBFT) $(NAME) clean
 
 $(NAME): $(OBJS) $(LDIR)/$(LIBFT)
-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDIR)$(LIBFT)
+	@$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDIR)$(LIBFT)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
 
 $(LDIR)/$(LIBFT):
 	@$(MAKE) -C $(LDIR)
