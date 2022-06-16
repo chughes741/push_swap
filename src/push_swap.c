@@ -24,6 +24,6 @@ int	main(int argc, char *argv[])
 	sorted_set = sort_args(argc, unsorted_set);
 	sort_pattern = get_pattern(sorted_set, unsorted_set);
 	print_pattern(sort_pattern);
-	// free_sets(unsorted_set, sorted_set, sort_pattern);
+	free_sets(&unsorted_set, &sorted_set, &sort_pattern);
 	return (0);
 }
