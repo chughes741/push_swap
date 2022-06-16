@@ -5,6 +5,7 @@
             "label": "Build push_swap",
             "command": "/usr/bin/gcc",
             "args": [
+                "-Wall -Werror -Wextra",
                 "-fdiagnostics-color=always",
                 "-g",
                 "*.c",
