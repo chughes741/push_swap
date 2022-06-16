@@ -41,6 +41,8 @@ int	input_check(int argc, char **argv)
 {
 	int	err;
 
+	if (0 == 0) // Take out before submission
+		return (0);
 	err = 0;
 	if (argc <= 1)
 		err = 1;

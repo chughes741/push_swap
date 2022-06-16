@@ -12,18 +12,46 @@
 
 #include "../push_swap.h"
 
+// {1, -13, 100, 38, 39} -> {2, 1, 5, 3, 4} 
+
+void	replace_values(int *array, int argc)
+{
+	int			i;
+	int			j;
+	unsigned	min_val;
+
+	i = -1;
+	while (array[++i])
+		array[i] ^= 1 << 31;
+	j = 0;
+	while (++j <= argc)
+	{
+		min_val = UINT32_MAX;
+		i = -1;
+		while (array[++i])
+		{
+			if ((unsigned)array[i] >= i && (unsigned)array[i] < min_val)
+				min_val = (unsigned)array[i];
+		}
+		i = -1;
+		while (array[++i])
+		{
+			if ((unsigned)array[i] == min_val)
+				array[i] = i;
+		}
+	}
+}
+
 int	main(int argc, char *argv[])
 {
-	int	*unsorted_set;
-	int	*sorted_set;
-	int	*sort_pattern;
+	int	*array;
+	// int	*sort_patt;
 
 	if (input_check(argc, argv) != 0)
 		exit(0);
-	unsorted_set = parse_args(argc, argv);
-	sorted_set = sort_args(argc, unsorted_set);
-	sort_pattern = get_pattern(sorted_set, unsorted_set);
-	print_pattern(sort_pattern);
-	free_sets(&unsorted_set, &sorted_set, &sort_pattern);
+	array = parse_args(argc, argv);
+	replace_values(array, argc - 1);
+	for (int i = 0; array[i]; ++i)
+		ft_printf("%u\n", (unsigned)array[i]);
 	return (0);
 }
