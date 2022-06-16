@@ -14,9 +14,9 @@
 
 int	main(int argc, char *argv[])
 {
-	int	**unsorted_set;
-	int	**sorted_set;
-	int	**sort_pattern;
+	int	*unsorted_set;
+	int	*sorted_set;
+	int	*sort_pattern;
 
 	if (input_check(argc, argv) != 0)
 		exit(0);

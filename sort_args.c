@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int	**sort_args(int argc, int **unsorted_set)
+int	*sort_args(int argc, int *unsorted_set)
 {
-	int	**sorted_set;
+	int	*sorted_set;
 	int	max_bits;
 
 	sorted_set = ft_calloc(argc, sizeof(int));

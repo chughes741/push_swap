@@ -12,10 +12,12 @@
 
 #include "push_swap.h"
 
-int	*get_pattern(int **sorted_set, int **unsorted_set)
+int	*get_pattern(int *sorted_set, int *unsorted_set)
 {
 	int	*sort_pattern;
 
+	sorted_set[0] = NULL;
+	unsorted_set[0] = NULL;
 	sort_pattern = ft_calloc(1, sizeof(int *));
 	return (sort_pattern);
 }
