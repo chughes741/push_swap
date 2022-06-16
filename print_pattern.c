@@ -14,5 +14,6 @@
 
 void	print_pattern(int *sort_pattern)
 {
+	sort_pattern[0] = 0;
 	return ;
 }

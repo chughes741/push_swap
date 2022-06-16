@@ -12,6 +12,18 @@
 
 #include "push_swap.h"
 
+int	find_max_bits(int *unsorted_set)
+{
+	unsorted_set[0] = 0;
+	return (0);
+}
+
+int	*radix_sort(int *unsorted_set, int max_bits)
+{
+	unsorted_set[0] = max_bits;
+	return (unsorted_set);
+}
+
 int	*sort_args(int argc, int *unsorted_set)
 {
 	int	*sorted_set;
