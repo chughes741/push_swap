@@ -12,42 +12,51 @@
 
 #include "../push_swap.h"
 
-// Returns the highest order bit number in an array of ints
-static int	find_max_bits(int *unsorted_set)
-{
-	int	i;
-	int	shift;
-	int	count;
-
-	count = 0;
-	i = -1;
-	while (unsorted_set[++i])
-	{
-		shift = 31;
-		while (--shift >= 0)
-		{
-			if (count < shift && (unsorted_set[i] >> shift) & 1)
-				count = shift + 1;
-		}
-	}
-	return (count);
-}
-
 // Binary Radix sort of an int array into another array
-static void	radix_sort(int *sorted_set, int *unsorted_set, int max_bits)
+static void	radix_sort(int n, int *sorted_set, int *unsorted_set, int max_bits)
 {
-	unsorted_set[0] = max_bits;
-	return (unsorted_set);
+	int	*q0;
+	int	*q1;
+	int	mask;
+	int	j;
+
+	q0 = ft_calloc(1, sizeof(int));
+	q1 = ft_calloc(1, sizeof(int));
+	mask = -1;
+	while (++mask < (8 * sizeof(int)))
+	{
+		i = -1;
+		while (sorted_set[++i])
+		{
+			if (sorted_set[i] & (1 << mask))
+				q1 = iappendf(q1, sorted_set[i]);
+			else
+				q0 = iappendf(q0, sorted_set[i]);
+		}
+		sorted_set = ijoinf(sorted_set, q0, q1);
+	}
+	return (sorted_set);
 }
+
+
+
+
+
+
+
+
 
 // Created a sorted version of an unsorted int array
 int	*sort_args(int argc, int *unsorted_set)
 {
 	int	*sorted_set;
 	int	max_bits;
+	int	i;
 
+	i = -1;
 	sorted_set = ft_calloc(argc, sizeof(int));
-	max_bits = find_max_bits(unsorted_set);
-	radix_sort(sorted_set, unsorted_set, max_bits);
+	while (unsorted_set[++i])
+		sorted_set[i] = unsorted_set[i];
+	radix_sort(argc, sorted_set, unsorted_set, max_bits);
 	return (sorted_set);
 }
