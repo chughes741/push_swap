@@ -1,52 +1,57 @@
 
+# Hides calls
+VERBOSE	=	FALSE
+ifeq ($(VERBOSE),TRUE)
+	HIDE =
+else
+	HIDE = @
+endif
 
-NAME	=	push_swap.out
-LIBFT	=	libftprintf.a
-LDIR	=	ft_printf/
-
+# Compiler and flags
 CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
 AFLAGS	=	-rs
-RM 		=	rm -rf
+RM		=	rm -rf
 
-SRCS	=	ft_strcmp.c		get_pattern.c	input_check.c	parse_args.c	\
-			print_pattern.c	push_swap.c		sort_args.c
-OBJS	=	$(SRCS:.c=.o)
-
+# Dir and file names
+NAME	=	push_swap.out # Remove .out before sub
+LIBFT	=	libftprintf.a
+LDIR	=	ft_printf/
+SRCDIR	=	src/
+OBJDIR	=	bin/
+SRCS	=	$(wildcard $(SRCDIR)*.c) # Change to file names before sub
+OBJS = $(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 # Targets
-all: $(LDIR)/$(LIBFT) $(NAME) clean
+all: $(LDIR)/$(LIBFT) $(NAME)
 
 $(NAME): $(OBJS) $(LDIR)/$(LIBFT)
-	@$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDIR)$(LIBFT)
+	$(HIDE)$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDIR)$(LIBFT)
 
-.c.o:
-	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
+$(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
+	$(HIDE)$(CC) $(CFLAGS) -c $< -o $@
 
 $(LDIR)/$(LIBFT):
-	@$(MAKE) -C $(LDIR)
+	$(HIDE)$(MAKE) -C $(LDIR)
 
+# Compiles bonus program: checker
 bonus: all
 
+# Removed debug files
+dclean:
+	$(HIDE)$(RM) *.dSYM
+
 # Removes objects
-clean:
-	@$(RM) $(OBJS)
-	@$(RM) $(LDIR)*.o
-	@$(RM) $(LDIR)libft/*.o
-	@$(RM) *.dSYM
+clean: dclean # Remove dclean before sub
+	$(HIDE)$(RM) $(OBJS)
+	$(HIDE)$(RM) $(LDIR)*.o
+	$(HIDE)$(RM) $(LDIR)libft/*.o
 
 # Removes objects and executables
 fclean: clean
-	@$(RM) $(NAME)
-#	@$(RM) $(LDIR)$(LIBFT)
-#	@$(RM) $(LDIR)libft/libft.a
+	$(HIDE)$(RM) $(NAME)
+#	$(HIDE)$(RM) $(LDIR)$(LIBFT)
+#	$(HIDE)$(RM) $(LDIR)libft/libft.a
 
 # Removes objects and executables and remakes
 re: fclean all
-
-# Test function used with main
-test: $(LDIR)/$(LIBFT)
-	@clear
-	@$(CC) $(CFLAGS) -o test $(SRCS) test_printf.c $(LDIR)$(LIBFT)
-	@./test
-	@$(RM) test
