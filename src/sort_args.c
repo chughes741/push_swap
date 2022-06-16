@@ -12,10 +12,24 @@
 
 #include "../push_swap.h"
 
-int	find_max_bits(int *unsorted_set)
+static int	find_max_bits(int *unsorted_set)
 {
-	unsorted_set[0] = 0;
-	return (0);
+	int	i;
+	int	shift;
+	int	count;
+
+	count = 0;
+	i = -1;
+	while (unsorted_set[++i])
+	{
+		shift = 31;
+		while (--shift >= 0)
+		{
+			if (count < shift && (unsorted_set[i] >> shift) & 1)
+				count = shift + 1;
+		}
+	}
+	return (count);
 }
 
 int	*radix_sort(int *unsorted_set, int max_bits)
