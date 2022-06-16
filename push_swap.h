@@ -21,6 +21,6 @@ int		*get_pattern(int *sorted_set, int *unsorted_set);
 int		*parse_args(int argc, char **argv);
 void	print_pattern(int *sort_pattern);
 int		*sort_args(int argc, int *unsorted_set);
-
+void	free_sets(int **unsorted_set, int **sorted_set, int **sort_pattern);
 
 #endif
