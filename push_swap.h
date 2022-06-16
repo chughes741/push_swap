@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "ft_printf/ft_printf.h"
-# include <errno.h>
 
 int		input_check(int argc, char **argv);
 int		ft_strcmp(const char *str1, const char *str2);
