@@ -15,9 +15,7 @@
 void	free_sets(int **unsorted_set, int **sorted_set, int **sort_pattern)
 {
 	free(*unsorted_set);
-	// free(*sorted_set);
 	*sorted_set[0] = 0;
 	free(*sort_pattern);
 	return ;
 }
-
