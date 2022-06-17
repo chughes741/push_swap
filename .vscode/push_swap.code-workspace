@@ -8,7 +8,8 @@
 		"editor.rulers": [
 			80
 		],
-		"editor.insertSpaces": false
+		"editor.insertSpaces": false,
+		"editor.bracketPairColorization.enabled": false
 	},
 	"launch": {
 		"version": "0.2.0",
