@@ -57,5 +57,6 @@ fclean: clean
 re: fclean all
 
 test: all
+	$(HIDE)clear
 	$(HIDE)./$(NAME) 0 9 8 7 6 5 1 2 3 412 421 901 -2340 -34 3441 -2 42342
 	$(HIDE)make fclean
