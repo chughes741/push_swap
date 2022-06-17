@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
 void	replace_values(unsigned *array, unsigned argc)
 {
@@ -19,7 +20,7 @@ void	replace_values(unsigned *array, unsigned argc)
 	unsigned	min_val;
 
 	i = -1;
-	while (array[++i])
+	while (++i < argc)
 		array[i] ^= 1 << 31;
 	j = -1;
 	while (++j <= argc)
@@ -48,5 +49,7 @@ int	main(int argc, char *argv[])
 		exit(0);
 	array = parse_args(argc, argv); // TODO change to utoa
 	replace_values((unsigned *)array, (unsigned)argc - 1);
+	for (int i = 0; i < argc - 1; ++i)
+		printf("%i\n", array[i]);
 	return (0);
 }
