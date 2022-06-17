@@ -12,32 +12,30 @@
 
 #include "../push_swap.h"
 
-// {1, -13, 100, 38, 39} -> {2, 1, 5, 3, 4} 
-
-void	replace_values(int *array, int argc)
+void	replace_values(unsigned *array, unsigned argc)
 {
-	int			i;
-	int			j;
+	unsigned	i;
+	unsigned	j;
 	unsigned	min_val;
 
 	i = -1;
 	while (array[++i])
 		array[i] ^= 1 << 31;
-	j = 0;
+	j = -1;
 	while (++j <= argc)
 	{
 		min_val = UINT32_MAX;
 		i = -1;
-		while (array[++i])
+		while (++i < argc)
 		{
-			if ((unsigned)array[i] >= i && (unsigned)array[i] < min_val)
-				min_val = (unsigned)array[i];
+			if (array[i] > j + 1 && array[i] < min_val)
+				min_val = array[i];
 		}
 		i = -1;
-		while (array[++i])
+		while (++i < argc)
 		{
-			if ((unsigned)array[i] == min_val)
-				array[i] = i;
+			if (array[i] == min_val)
+				array[i] = j;
 		}
 	}
 }
@@ -45,13 +43,10 @@ void	replace_values(int *array, int argc)
 int	main(int argc, char *argv[])
 {
 	int	*array;
-	// int	*sort_patt;
 
 	if (input_check(argc, argv) != 0)
 		exit(0);
-	array = parse_args(argc, argv);
-	replace_values(array, argc - 1);
-	for (int i = 0; array[i]; ++i)
-		ft_printf("%u\n", (unsigned)array[i]);
+	array = parse_args(argc, argv); // TODO change to utoa
+	replace_values((unsigned *)array, (unsigned)argc - 1);
 	return (0);
 }
