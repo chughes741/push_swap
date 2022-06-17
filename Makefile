@@ -43,9 +43,9 @@ dclean:
 
 # Removes objects
 clean: dclean # Remove dclean before sub
-	$(HIDE)$(RM) $(OBJS)
-	$(HIDE)$(RM) $(LDIR)*.o
-	$(HIDE)$(RM) $(LDIR)libft/*.o
+#	$(HIDE)$(RM) $(OBJS)
+#	$(HIDE)$(RM) $(LDIR)*.o
+#	$(HIDE)$(RM) $(LDIR)libft/*.o
 
 # Removes objects and executables
 fclean: clean
@@ -55,3 +55,7 @@ fclean: clean
 
 # Removes objects and executables and remakes
 re: fclean all
+
+test: all
+	$(HIDE)./$(NAME) 0 9 8 7 6 5 1 2 3 412 421 901 -2340 -34 3441 -2 42342
+	$(HIDE)make fclean
