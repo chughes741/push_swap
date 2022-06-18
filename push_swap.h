@@ -24,4 +24,9 @@ void	free_sets(int **unsorted_set, int **sorted_set, int **sort_pattern);
 int		*iappendf(int *array, int nbr);
 void	ijoin(int *sorted_set, int *q0, int *q1);
 
+void	swap(int *stack, int n);
+void	rotate(int *stack, int n);
+void	rrotate(int *stack, int n);
+void	push(int *donor_stack, int *recipient_stack, int n_a, int n_b);
+
 #endif
