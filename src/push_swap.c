@@ -22,6 +22,7 @@ int	main(int argc, char *argv[])
 	array.i_args = parse_args(argc, argv);
 	array.stack_a = itou(array.i_args, argc - 1);
 	hash_array(array.stack_a, (unsigned)argc - 1);
+	array.n_a = argc - 1;
 	list_moves(&array);
 	optimize_moves(&array);
 
