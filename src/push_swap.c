@@ -20,9 +20,13 @@ int	main(int argc, char *argv[])
 	if (input_check(argc, argv) != 0)
 		exit(0);
 	array.i_args = parse_args(argc, argv);
-	array.u_args = itou(array.i_args, argc - 1);
-	hash_array(array.u_args, (unsigned)argc - 1);
+	array.stack_a = itou(array.i_args, argc - 1);
+	hash_array(array.stack_a, (unsigned)argc - 1);
+	list_moves(&array);
+	optimize_moves(&array);
+
 	for (int i = 0; i < argc - 1; ++i)
-		printf("%u\n", array.u_args[i]);
+		printf("%u\n", array.stack_a[i]);
+
 	return (0);
 }

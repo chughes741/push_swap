@@ -16,22 +16,22 @@
 # include "ft_printf/ft_printf.h"
 
 typedef struct t_array {
-	int			*i_args;
-	unsigned	*u_args;
-	unsigned	*stack_a;
-	unsigned	*stack_b;
-
+	int				*i_args;
+	unsigned		*stack_a;
+	unsigned		*stack_b;
+	unsigned short	*slow_moves;
+	unsigned short	*fast_moves;
 }				t_array;
 
 void		swap(int *stack, int n);
 void		rotate(int *stack, int n);
 void		rrotate(int *stack, int n);
 void		push(int *donor_stack, int *recipient_stack, int n_a, int n_b);
-
 int			input_check(int argc, char **argv);
 int			*parse_args(int argc, char **argv);
 void		hash_array(unsigned *array, unsigned n);
-
+void		list_moves(t_array *array);
+void		optimize_moves(t_array *array);
 unsigned	*itou(int *array, int n);
 int			ft_strcmp(const char *str1, const char *str2);
 
