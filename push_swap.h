@@ -19,8 +19,8 @@ typedef struct t_array {
 	int				*i_args;
 	unsigned		*stack_a;
 	unsigned		*stack_b;
-	unsigned		n_a;
-	unsigned		n_b;
+	int				n_a;
+	int				n_b;
 	unsigned short	*slow_moves;
 	unsigned short	*fast_moves;
 }				t_array;
