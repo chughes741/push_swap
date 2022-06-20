@@ -13,18 +13,6 @@
 #include "../push_swap.h"
 #include <stdio.h>
 
-unsigned	*itou(int *array, int n)
-{
-	unsigned	*rtn_array;
-	int			i;
-
-	i = -1;
-	rtn_array = ft_calloc(n, sizeof(unsigned));
-	while (++i < n)
-		rtn_array[i] = (array[i] ^ (1 << 31));
-	return (rtn_array);
-}
-
 void	hash_values(unsigned *array, unsigned n)
 {
 	unsigned	i;
