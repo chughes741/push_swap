@@ -19,10 +19,12 @@ int	main(int argc, char *argv[])
 
 	if (input_check(argc, argv) != 0)
 		exit(0);
+	array.size = (unsigned)argc - 1;
 	array.i_args = parse_args(argc, argv);
-	array.stack_a = itou(array.i_args, argc - 1);
-	hash_array(array.stack_a, (unsigned)argc - 1);
-	array.n_a = argc - 1;
+	array.stack_a = itou(array.i_args, array.size);
+	hash_array(array.stack_a, array.size);
+	for (int i = 0; i < argc - 1; ++i)
+		printf("%u\n", array.stack_a[i]);
 	list_moves(&array);
 	optimize_moves(&array);
 

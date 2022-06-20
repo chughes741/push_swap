@@ -17,18 +17,19 @@
 
 typedef struct t_array {
 	int				*i_args;
+	unsigned		size;
 	unsigned		*stack_a;
 	unsigned		*stack_b;
-	int				n_a;
-	int				n_b;
+	unsigned		n_a;
+	unsigned		n_b;
 	unsigned short	*slow_moves;
 	unsigned short	*fast_moves;
 }				t_array;
 
-void		swap(int *stack, int n);
-void		rotate(int *stack, int n);
-void		rrotate(int *stack, int n);
-void		push(int *donor_stack, int *recipient_stack, int n_a, int n_b);
+void		swap(unsigned *stack, unsigned n);
+void		rotate(unsigned *stack, unsigned n);
+void		rrotate(unsigned *stack, unsigned n);
+void		push(unsigned *donor_stack, unsigned *recipient_stack, t_array *a);
 int			input_check(int argc, char **argv);
 int			*parse_args(int argc, char **argv);
 void		hash_array(unsigned *array, unsigned n);
