@@ -45,7 +45,6 @@ void	rotate(int *stack, int n)
 void	rrotate(int *stack, int n)
 {
 	int	temp;
-	int	i;
 
 	if (n <= 1)
 		return ;
