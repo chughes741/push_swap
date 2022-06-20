@@ -15,15 +15,17 @@
 
 # include "ft_printf/ft_printf.h"
 
+typedef struct t_array {
+	int			*i_args;
+	unsigned	*u_args;
+	unsigned	*stack_a;
+	unsigned	*stack_b;
+
+}				t_array;
+
 int		input_check(int argc, char **argv);
 int		ft_strcmp(const char *str1, const char *str2);
-int		*get_pattern(int *sorted_set, int *unsorted_set);
 int		*parse_args(int argc, char **argv);
-void	print_pattern(int *sort_pattern);
-void	free_sets(int **unsorted_set, int **sorted_set, int **sort_pattern);
-int		*iappendf(int *array, int nbr);
-void	ijoin(int *sorted_set, int *q0, int *q1);
-
 void	swap(int *stack, int n);
 void	rotate(int *stack, int n);
 void	rrotate(int *stack, int n);

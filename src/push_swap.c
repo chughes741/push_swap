@@ -13,11 +13,6 @@
 #include "../push_swap.h"
 #include <stdio.h>
 
-typedef struct t_array {
-	int			*i_args;
-	unsigned	*u_args;
-}				t_array;
-
 unsigned	*itou(int *array, int n)
 {
 	unsigned	*rtn_array;
@@ -30,7 +25,7 @@ unsigned	*itou(int *array, int n)
 	return (rtn_array);
 }
 
-void	order_values(unsigned *array, unsigned n)
+void	hash_values(unsigned *array, unsigned n)
 {
 	unsigned	i;
 	unsigned	j;
@@ -63,7 +58,7 @@ int	main(int argc, char *argv[])
 		exit(0);
 	array.i_args = parse_args(argc, argv);
 	array.u_args = itou(array.i_args, argc - 1);
-	order_values(array.u_args, (unsigned)argc - 1);
+	hash_values(array.u_args, (unsigned)argc - 1);
 	for (int i = 0; i < argc - 1; ++i)
 		printf("%u\n", array.u_args[i]);
 	return (0);
