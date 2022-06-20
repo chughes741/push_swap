@@ -30,6 +30,7 @@ void		push(int *donor_stack, int *recipient_stack, int n_a, int n_b);
 
 int			input_check(int argc, char **argv);
 int			*parse_args(int argc, char **argv);
+void		hash_array(unsigned *array, unsigned n);
 
 unsigned	*itou(int *array, int n);
 int			ft_strcmp(const char *str1, const char *str2);

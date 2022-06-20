@@ -13,31 +13,6 @@
 #include "../push_swap.h"
 #include <stdio.h>
 
-void	hash_values(unsigned *array, unsigned n)
-{
-	unsigned	i;
-	unsigned	j;
-	unsigned	min_val;
-
-	i = -1;
-	while (++i <= n)
-	{
-		min_val = UINT32_MAX;
-		j = -1;
-		while (++j < n)
-		{
-			if (array[j] > i + 1 && array[j] < min_val)
-				min_val = array[j];
-		}
-		j = -1;
-		while (++j < n)
-		{
-			if (array[j] == min_val)
-				array[j] = i;
-		}
-	}
-}
-
 int	main(int argc, char *argv[])
 {
 	static t_array	array;
@@ -46,7 +21,7 @@ int	main(int argc, char *argv[])
 		exit(0);
 	array.i_args = parse_args(argc, argv);
 	array.u_args = itou(array.i_args, argc - 1);
-	hash_values(array.u_args, (unsigned)argc - 1);
+	hash_array(array.u_args, (unsigned)argc - 1);
 	for (int i = 0; i < argc - 1; ++i)
 		printf("%u\n", array.u_args[i]);
 	return (0);
