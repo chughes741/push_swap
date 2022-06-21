@@ -14,7 +14,8 @@
 
 unsigned	*uijoin(unsigned **list, unsigned move)
 {
-	unsigned	len;
+	int			len;
+	int			i;
 	unsigned	*rtn;
 
 	len = 0;
@@ -22,8 +23,9 @@ unsigned	*uijoin(unsigned **list, unsigned move)
 		len++;
 	rtn = ft_calloc(len + 2, sizeof(unsigned));
 	rtn[len] = move;
-	while (--len >= 0)
-		rtn[len] = list[len];
-	free(list);
+	i = -1;
+	while (++i < len)
+		rtn[i] = *list[i];
+	free(*list);
 	return (rtn);
 }

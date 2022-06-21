@@ -16,14 +16,14 @@
 # include "ft_printf/ft_printf.h"
 
 typedef struct t_array {
-	int				*i_args;
-	unsigned		size;
-	unsigned		*stack_a;
-	unsigned		*stack_b;
-	unsigned		n_a;
-	unsigned		n_b;
-	unsigned short	*slow_moves;
-	unsigned short	*fast_moves;
+	int			*i_args;
+	unsigned	size;
+	unsigned	*stack_a;
+	unsigned	*stack_b;
+	unsigned	n_a;
+	unsigned	n_b;
+	unsigned	*slow_moves;
+	unsigned	*fast_moves;
 }				t_array;
 
 void		swap(unsigned *stack, unsigned n);
