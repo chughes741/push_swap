@@ -37,5 +37,6 @@ void		list_moves(t_array *array);
 void		optimize_moves(t_array *array);
 unsigned	*itou(int *array, int n);
 int			ft_strcmp(const char *str1, const char *str2);
+unsigned	*uijoin(unsigned **list, unsigned move);
 
 #endif
