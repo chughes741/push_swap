@@ -24,6 +24,5 @@ int	main(int argc, char *argv[])
 	hash_array(array.stack_a, array.size);
 	list_moves(&array);
 	optimize_moves(&array);
-	print_moves(array.slow_moves);
 	return (0);
 }

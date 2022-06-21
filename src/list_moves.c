@@ -27,23 +27,20 @@ static int	in_order(t_array *array)
 
 void	list_moves(t_array *array)
 {
-	array->slow_moves = ft_calloc(1, sizeof(unsigned));
 	while (in_order(array))
 	{
 		if (array->stack_a[0] > array->stack_a[1] && array->stack_a[1])
 		{
 			swap(array->stack_a, array->size);
-			array->slow_moves = uijoin(&array->slow_moves, SA);
+			ft_printf("sa\n");
 			rrotate(array->stack_a, array->size);
-			array->slow_moves = uijoin(&array->slow_moves, RRA);
+			ft_printf("rra\n");
 		}
 		else
 		{
 			rotate(array->stack_a, array->size);
-			array->slow_moves = uijoin(&array->slow_moves, RA);
+			ft_printf("ra\n");
 		}
 	}
-	for (int i = 0; array->slow_moves[i]; ++i)
-		printf("%u", array->slow_moves[i]);
 	return ;
 }
