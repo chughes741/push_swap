@@ -38,9 +38,6 @@ void	list_moves(t_array *array)
 		}
 		else
 			rotate(array->stack_a, array->size);
-		for (unsigned i = 0; i < array->size; ++i)
-			printf("%u ", array->stack_a[i]);
-		printf("\n");
 	}
 	return ;
 }
