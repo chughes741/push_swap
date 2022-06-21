@@ -23,14 +23,8 @@ int	main(int argc, char *argv[])
 	array.i_args = parse_args(argc, argv);
 	array.stack_a = itou(array.i_args, array.size);
 	hash_array(array.stack_a, array.size);
-	// for (int i = 0; i < argc - 1; ++i)
-		// printf("%2u ", array.stack_a[i]);
 	list_moves(&array);
 	optimize_moves(&array);
-	// printf("\n");
-	// for (int i = 0; i < argc - 1; ++i)
-		// printf("%2u ", array.stack_a[i]);
-	// printf("\n");
 	print_moves(array.slow_moves);
 	return (0);
 }
