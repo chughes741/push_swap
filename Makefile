@@ -9,12 +9,12 @@ endif
 
 # Compiler and flags
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-g -Wall -Werror -Wextra
 AFLAGS	=	-rs
 RM		=	rm -rf
 
 # Dir and file names
-NAME	=	push_swap.out # Remove .out before sub
+NAME	=	push_swap
 LIBFT	=	libftprintf.a
 LDIR	=	ft_printf/
 SRCDIR	=	src/
@@ -37,18 +37,15 @@ $(LDIR)/$(LIBFT):
 # Compiles bonus program: checker
 bonus: all
 
-# Removed debug files
-dclean:
-	$(HIDE)$(RM) *.dSYM
-
 # Removes objects
-clean: dclean # Remove dclean before sub
-#	$(HIDE)$(RM) $(OBJS)
-#	$(HIDE)$(RM) $(LDIR)*.o
-#	$(HIDE)$(RM) $(LDIR)libft/*.o
+clean:
+	$(HIDE)$(RM) $(OBJS)
+	$(HIDE)$(RM) $(LDIR)*.o
+	$(HIDE)$(RM) $(LDIR)libft/*.o
 
 # Removes objects and executables
-fclean: clean
+fclean: # Add clean back before sub
+	$(HIDE)$(RM) *.dSYM
 	$(HIDE)$(RM) $(NAME)
 #	$(HIDE)$(RM) $(LDIR)$(LIBFT)
 #	$(HIDE)$(RM) $(LDIR)libft/libft.a
@@ -56,7 +53,17 @@ fclean: clean
 # Removes objects and executables and remakes
 re: fclean all
 
-test: all
+test: re
 	$(HIDE)clear
 	$(HIDE)./$(NAME) 0 9 8 7 6 5 1 2 3 412 421 901 -2340 -34 3441 -2 42342
 	$(HIDE)make fclean
+
+val: re
+	$(HIDE)clear
+	$(HIDE)valgrind				\
+		--leak-check=full		\
+		--track-origins=yes		\
+		--show-leak-kinds=all	\
+		--read-var-info=yes		\
+		--read-inline-info=yes	\
+		./push_swap 0 9 8 7 6 5 1 2 3 412 421 901 -2340 -34 3441 -2 42342
