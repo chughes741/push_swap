@@ -12,18 +12,6 @@
 
 #include "../push_swap.h"
 
-#define SA 1
-#define SB 2
-#define SS 3
-#define PA 4
-#define PB 5
-#define RA 6
-#define RB 7
-#define RR 8
-#define RRA 9
-#define RRB 10
-#define RRR 11
-
 static int	in_order(t_array *array)
 {
 	unsigned	n;
@@ -55,5 +43,7 @@ void	list_moves(t_array *array)
 			array->slow_moves = uijoin(&array->slow_moves, RA);
 		}
 	}
+	for (int i = 0; array->slow_moves[i]; ++i)
+		printf("%u", array->slow_moves[i]);
 	return ;
 }
