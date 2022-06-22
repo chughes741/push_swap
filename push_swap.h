@@ -32,8 +32,10 @@ void		push_b(t_array *array);
 void		rotate_a(t_array *array);
 void		rotate_b(t_array *array);
 void		rotate_both(t_array *array);
+void		swap_a(t_array *array);
+void		swap_b(t_array *array);
+void		swap_both(t_array *array);
 
-void		swap(unsigned *stack, unsigned n);
 void		rrotate(unsigned *stack, unsigned n);
 int			input_check(int argc, char **argv);
 int			*parse_args(int argc, char **argv);

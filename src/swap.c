@@ -12,15 +12,36 @@
 
 #include "../push_swap.h"
 
-// Swaps the first two elements of the stack
-void	swap(unsigned *stack, unsigned n)
+// Swaps the first two elements of stack_a
+void	swap_a(t_array *array)
 {
 	unsigned	temp;
 
-	if (n <= 1)
+	if (array->n_a <= 1)
 		return ;
-	temp = stack[0];
-	stack[0] = stack[1];
-	stack[1] = temp;
+	temp = array->stack_a[0];
+	array->stack_a[0] = array->stack_a[1];
+	array->stack_a[1] = temp;
+	return ;
+}
+
+// Swaps the first two elements of stack_b
+void	swap_b(t_array *array)
+{
+	unsigned	temp;
+
+	if (array->n_b <= 1)
+		return ;
+	temp = array->stack_b[0];
+	array->stack_b[0] = array->stack_b[1];
+	array->stack_b[1] = temp;
+	return ;
+}
+
+// Swaps both stacks top two elements
+void	swap_both(t_array *array)
+{
+	swap_a(array);
+	swap_b(array);
 	return ;
 }
