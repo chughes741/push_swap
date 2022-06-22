@@ -12,16 +12,38 @@
 
 #include "../push_swap.h"
 
-// Shift all elements down in the stack, last becomes the first
-void	rrotate(unsigned *stack, unsigned n)
+// Shift all elements down in the stack_a, last becomes the first
+void	r_rotate_a(t_array *array)
 {
 	unsigned	temp;
 
-	if (n <= 1)
+	if (array->n_a <= 1)
 		return ;
-	temp = stack[n - 1];
-	while (--n)
-		stack[n] = stack[n - 1];
-	stack[0] = temp;
+	temp = array->stack_a[array->n_a - 1];
+	while (--array->n_a)
+		array->stack_a[array->n_a] = array->stack_a[array->n_a - 1];
+	array->stack_a[0] = temp;
+	return ;
+}
+
+// Shift all elements down in the stack_b, last becomes the first
+void	r_rotate_b(t_array *array)
+{
+	unsigned	temp;
+
+	if (array->n_b <= 1)
+		return ;
+	temp = array->stack_b[array->n_b - 1];
+	while (--array->n_b)
+		array->stack_b[array->n_b] = array->stack_b[array->n_b - 1];
+	array->stack_b[0] = temp;
+	return ;
+}
+
+// Shifts all elements down one in both stacks
+void	r_rotate_both(t_array *array)
+{
+	r_rotate_a(array);
+	r_rotate_b(array);
 	return ;
 }

@@ -35,8 +35,10 @@ void		rotate_both(t_array *array);
 void		swap_a(t_array *array);
 void		swap_b(t_array *array);
 void		swap_both(t_array *array);
+void		r_rotate_a(t_array *array);
+void		r_rotate_b(t_array *array);
+void		r_rotate_both(t_array *array);
 
-void		rrotate(unsigned *stack, unsigned n);
 int			input_check(int argc, char **argv);
 int			*parse_args(int argc, char **argv);
 void		hash_array(unsigned *array, unsigned n);
