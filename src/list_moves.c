@@ -37,8 +37,6 @@ static void	split_stack(t_array *array)
 		if (array->stack_a[0] < half_length)
 		{
 			push(array->stack_a, array->stack_b, array->n_a, array->n_b);
-			array->n_a -= 1;
-			array->n_b += 1;
 			i++;
 		}
 		else
@@ -57,9 +55,7 @@ static void	swap_sort(unsigned *stack, unsigned size)
 			rrotate(stack, size);
 		}
 		else
-		{
 			rotate(stack, size);
-		}
 	}
 	return ;
 }
@@ -70,11 +66,7 @@ static void	merge_stack(t_array *array)
 
 	i = array->n_b + 1;
 	while (--i)
-	{
 		push(array->stack_b, array->stack_a, array->n_b, array->n_b);
-		array->n_a += 1;
-		array->n_b += 1;
-	}
 	return ;
 }
 
