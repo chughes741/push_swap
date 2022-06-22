@@ -27,10 +27,12 @@ typedef struct t_array {
 	unsigned	*fast_moves;
 }				t_array;
 
+void		push_a(t_array *array);
+void		push_b(t_array *array);
+
 void		swap(unsigned *stack, unsigned n);
 void		rotate(unsigned *stack, unsigned n);
 void		rrotate(unsigned *stack, unsigned n);
-void		push(unsigned *donor_stack, unsigned *recipient_stack, unsigned n_d, unsigned n_r);
 int			input_check(int argc, char **argv);
 int			*parse_args(int argc, char **argv);
 void		hash_array(unsigned *array, unsigned n);
