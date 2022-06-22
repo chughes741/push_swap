@@ -31,7 +31,7 @@ static void	split_stack(t_array *array)
 	unsigned	half_length;
 
 	i = 0;
-	half_length = array->size / 2;
+	half_length = array->n_a / 2;
 	while (i < half_length)
 	{
 		if (array->stack_a[0] < half_length)
@@ -89,8 +89,8 @@ static void	merge_stack(t_array *array)
 void	list_moves(t_array *array)
 {
 	split_stack(array);
-	swap_sort(array->stack_b, array->size);
-	swap_sort(array->stack_a, array->size);
+	swap_sort(array->stack_b, array->n_b);
+	swap_sort(array->stack_a, array->n_a);
 	merge_stack(array);
 	return ;
 }
