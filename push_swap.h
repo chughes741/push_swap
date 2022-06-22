@@ -17,7 +17,7 @@
 # include <stdio.h>
 
 typedef struct t_array {
-	int			*i_args;
+	int			*args;
 	unsigned	*stack_a;
 	unsigned	*stack_b;
 	unsigned	n_a;

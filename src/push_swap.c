@@ -19,8 +19,8 @@ int	main(int argc, char *argv[])
 	if (input_check(argc, argv) != 0) // TODO sort out input check
 		exit(0);
 	var.n_a = (unsigned)argc - 1; // TODO input as a single string
-	var.i_args = parse_args(argc, argv); // TODO input as a single string
-	var.stack_a = itou(var.i_args, var.n_a); // TODO pass only t_arrary*
+	var.args = parse_args(argc, argv); // TODO input as a single string
+	var.stack_a = itou(var.args, var.n_a); // TODO pass only t_arrary*
 	hash_array(var.stack_a, var.n_a); // TODO pass only t_array*
 	list_moves(&var);
 	return (0);
