@@ -43,7 +43,6 @@ int			input_check(int argc, char **argv);
 int			*parse_args(int argc, char **argv);
 void		hash_array(unsigned *array, unsigned n);
 void		list_moves(t_array *array);
-void		optimize_moves(t_array *array);
 unsigned	*itou(int *array, int n);
 int			ft_strcmp(const char *str1, const char *str2);
 

@@ -19,10 +19,9 @@ int	main(int argc, char *argv[])
 	if (input_check(argc, argv) != 0)
 		exit(0);
 	array.size = (unsigned)argc - 1;
-	array.i_args = parse_args(argc, argv);
-	array.stack_a = itou(array.i_args, array.size);
-	hash_array(array.stack_a, array.size);
+	array.i_args = parse_args(argc, argv); // TODO input as a single string
+	array.stack_a = itou(array.i_args, array.size); // TODO pass only t_arrary*
+	hash_array(array.stack_a, array.size); // TODO pass only t_array*
 	list_moves(&array);
-	optimize_moves(&array);
 	return (0);
 }
