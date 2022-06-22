@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Shift all elements up in stack_a, first becomes the last
-void	rotate_a(t_array *array)
+void	rotate_a(t_array *array) // TODO add move to ->moves
 {
 	unsigned	temp;
 	unsigned	i;
@@ -29,7 +29,7 @@ void	rotate_a(t_array *array)
 }
 
 // Shift all elements up in stack_b, first becomes the last
-void	rotate_b(t_array *array)
+void	rotate_b(t_array *array) // TODO add move to ->moves
 {
 	unsigned	temp;
 	unsigned	i;
@@ -44,7 +44,7 @@ void	rotate_b(t_array *array)
 	return ;
 }
 
-void	rotate_both(t_array *array)
+void	rotate_both(t_array *array) // TODO add move to ->moves
 {
 	rotate_a(array);
 	rotate_b(array);

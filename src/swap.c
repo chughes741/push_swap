@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Swaps the first two elements of stack_a
-void	swap_a(t_array *array)
+void	swap_a(t_array *array) // TODO add move to ->moves
 {
 	unsigned	temp;
 
@@ -26,7 +26,7 @@ void	swap_a(t_array *array)
 }
 
 // Swaps the first two elements of stack_b
-void	swap_b(t_array *array)
+void	swap_b(t_array *array) // TODO add move to ->moves
 {
 	unsigned	temp;
 
@@ -39,7 +39,7 @@ void	swap_b(t_array *array)
 }
 
 // Swaps both stacks top two elements
-void	swap_both(t_array *array)
+void	swap_both(t_array *array) // TODO add move to ->moves
 {
 	swap_a(array);
 	swap_b(array);
