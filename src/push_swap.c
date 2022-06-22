@@ -14,14 +14,14 @@
 
 int	main(int argc, char *argv[])
 {
-	static t_array	array;
+	static t_array	var;
 
-	if (input_check(argc, argv) != 0)
+	if (input_check(argc, argv) != 0) // TODO sort out input check
 		exit(0);
-	array.size = (unsigned)argc - 1;
-	array.i_args = parse_args(argc, argv); // TODO input as a single string
-	array.stack_a = itou(array.i_args, array.size); // TODO pass only t_arrary*
-	hash_array(array.stack_a, array.size); // TODO pass only t_array*
-	list_moves(&array);
+	var.n_a = (unsigned)argc - 1; // TODO input as a single string
+	var.i_args = parse_args(argc, argv); // TODO input as a single string
+	var.stack_a = itou(var.i_args, var.n_a); // TODO pass only t_arrary*
+	hash_array(var.stack_a, var.n_a); // TODO pass only t_array*
+	list_moves(&var);
 	return (0);
 }
