@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Shift all elements down in the stack_a, last becomes the first
-void	r_rotate_a(t_array *var)
+void	r_rotate_a(t_data *var)
 {
 	int	temp;
 
@@ -28,7 +28,7 @@ void	r_rotate_a(t_array *var)
 }
 
 // Shift all elements down in the stack_b, last becomes the first
-void	r_rotate_b(t_array *var)
+void	r_rotate_b(t_data *var)
 {
 	int	temp;
 
@@ -43,7 +43,7 @@ void	r_rotate_b(t_array *var)
 }
 
 // Shifts all elements down one in both stacks
-void	r_rotate_both(t_array *var)
+void	r_rotate_both(t_data *var)
 {
 	r_rotate_a(var);
 	r_rotate_b(var);

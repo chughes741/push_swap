@@ -25,7 +25,7 @@ static int	in_order(int *stack, int size)
 	return (0);
 }
 
-static void	split_stack(t_array *var)
+static void	split_stack(t_data *var)
 {
 	int	i;
 	int	half_length;
@@ -45,7 +45,7 @@ static void	split_stack(t_array *var)
 	return ;
 }
 
-static void	swap_sort_a(t_array *var)
+static void	swap_sort_a(t_data *var)
 {
 	while (in_order(var->stack_a, var->n_a))
 	{
@@ -60,7 +60,7 @@ static void	swap_sort_a(t_array *var)
 	return ;
 }
 
-static void	swap_sort_b(t_array *var)
+static void	swap_sort_b(t_data *var)
 {
 	while (in_order(var->stack_b, var->n_b))
 	{
@@ -75,7 +75,7 @@ static void	swap_sort_b(t_array *var)
 	return ;
 }
 
-static void	merge_stack(t_array *var)
+static void	merge_stack(t_data *var)
 {
 	int	i;
 
@@ -85,7 +85,7 @@ static void	merge_stack(t_array *var)
 	return ;
 }
 
-void	list_moves(t_array *var)
+void	list_moves(t_data *var)
 {
 	split_stack(var);
 	swap_sort_a(var);

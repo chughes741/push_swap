@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Push top element from stack_b to stack_a
-void	push_a(t_array *var)
+void	push_a(t_data *var)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ void	push_a(t_array *var)
 }
 
 // Push top element from stack_a to stack_b
-void	push_b(t_array *var)
+void	push_b(t_data *var)
 {
 	int	i;
 

@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-void	var_init(t_array *var, int argc, char **argv)
+void	var_init(t_data *var, int argc, char **argv)
 {
-	var = ft_calloc(1, sizeof(t_array));
+	var = ft_calloc(1, sizeof(t_data));
 	var->n_a = argc - 1;
 	var->stack_a = ft_calloc(argc, sizeof(int));
 	var->stack_b = ft_calloc(argc, sizeof(int));

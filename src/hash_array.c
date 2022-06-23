@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 // 17 args
-void	hash_array(t_array *var)
+void	hash_array(t_data *var)
 {
 	int	i;
 	int	j;

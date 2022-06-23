@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Swaps the first two elements of stack_a
-void	swap_a(t_array *var)
+void	swap_a(t_data *var)
 {
 	int	temp;
 
@@ -27,7 +27,7 @@ void	swap_a(t_array *var)
 }
 
 // Swaps the first two elements of stack_b
-void	swap_b(t_array *var)
+void	swap_b(t_data *var)
 {
 	int	temp;
 
@@ -41,7 +41,7 @@ void	swap_b(t_array *var)
 }
 
 // Swaps both stacks top two elements
-void	swap_both(t_array *var)
+void	swap_both(t_data *var)
 {
 	swap_a(var);
 	swap_b(var);

@@ -14,7 +14,7 @@
 
 int	main(int argc, char *argv[])
 {
-	static t_array	*var;
+	static t_data	*var;
 
 	input_check(argc, argv); // TODO sort out input check
 	var_init(var, argc, argv); // TODO argv as single string
