@@ -13,39 +13,39 @@
 #include "../push_swap.h"
 
 // Shift all elements up in stack_a, first becomes the last
-void	rotate_a(t_array *array) // TODO add move to ->moves
+void	rotate_a(t_array *var) // TODO add move to ->moves
 {
 	int	temp;
 	int	i;
 
-	if (array->n_a <= 1)
+	if (var->n_a <= 1)
 		return ;
 	i = -1;
-	temp = array->stack_a[0];
-	while (++i < array->n_a - 1)
-		array->stack_a[i] = array->stack_a[i + 1];
-	array->stack_a[i] = temp;
+	temp = var->stack_a[0];
+	while (++i < var->n_a - 1)
+		var->stack_a[i] = var->stack_a[i + 1];
+	var->stack_a[i] = temp;
 	return ;
 }
 
 // Shift all elements up in stack_b, first becomes the last
-void	rotate_b(t_array *array) // TODO add move to ->moves
+void	rotate_b(t_array *var) // TODO add move to ->moves
 {
 	int	temp;
 	int	i;
 
-	if (array->n_b <= 1)
+	if (var->n_b <= 1)
 		return ;
 	i = -1;
-	temp = array->stack_b[0];
-	while (++i < array->n_b - 1)
-		array->stack_b[i] = array->stack_b[i + 1];
-	array->stack_b[i] = temp;
+	temp = var->stack_b[0];
+	while (++i < var->n_b - 1)
+		var->stack_b[i] = var->stack_b[i + 1];
+	var->stack_b[i] = temp;
 	return ;
 }
 
-void	rotate_both(t_array *array) // TODO add move to ->moves
+void	rotate_both(t_array *var) // TODO add move to ->moves
 {
-	rotate_a(array);
-	rotate_b(array);
+	rotate_a(var);
+	rotate_b(var);
 }

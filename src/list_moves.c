@@ -25,22 +25,22 @@ static int	in_order(int *stack, int size)
 	return (0);
 }
 
-static void	split_stack(t_array *array)
+static void	split_stack(t_array *var)
 {
 	int	i;
 	int	half_length;
 
 	i = 0;
-	half_length = array->n_a / 2;
+	half_length = var->n_a / 2;
 	while (i < half_length)
 	{
-		if (array->stack_a[0] < half_length)
+		if (var->stack_a[0] < half_length)
 		{
-			push(array->stack_a, array->stack_b, array->n_a, array->n_b);
+			push(var->stack_a, var->stack_b, var->n_a, var->n_b);
 			i++;
 		}
 		else
-			rotate(array->stack_a, array->n_a);
+			rotate(var->stack_a, var->n_a);
 	}
 	return ;
 }
@@ -60,21 +60,21 @@ static void	swap_sort(int *stack, int size)
 	return ;
 }
 
-static void	merge_stack(t_array *array)
+static void	merge_stack(t_array *var)
 {
 	int	i;
 
-	i = array->n_b + 1;
+	i = var->n_b + 1;
 	while (--i)
-		push(array->stack_b, array->stack_a, array->n_b, array->n_b);
+		push(var->stack_b, var->stack_a, var->n_b, var->n_b);
 	return ;
 }
 
-void	list_moves(t_array *array)
+void	list_moves(t_array *var)
 {
-	split_stack(array);
-	swap_sort(array->stack_b, array->n_b);
-	swap_sort(array->stack_a, array->n_a);
-	merge_stack(array);
+	split_stack(var);
+	swap_sort(var->stack_b, var->n_b);
+	swap_sort(var->stack_a, var->n_a);
+	merge_stack(var);
 	return ;
 }
