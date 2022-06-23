@@ -14,11 +14,11 @@
 
 int	main(int argc, char *argv[])
 {
-	static t_data	*var;
+	t_data	*data;
 
 	input_check(argc, argv); // TODO sort out input check
-	var_init(var, argc, argv); // TODO argv as single string
-	hash_array(var);
-	list_moves(var);
+	data = get_data(argc, argv); // TODO argv as single string
+	hash_array(data);
+	list_moves(data);
 	return (0);
 }
