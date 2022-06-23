@@ -38,7 +38,7 @@ void	r_rotate_a(t_data *var);
 void	r_rotate_b(t_data *var);
 void	r_rotate_both(t_data *var);
 
-void	var_init(t_data *var, int argc, char **argv);
+t_data	*get_data(int argc, char **argv);
 void	input_check(int argc, char **argv);
 int		*parse_args(int argc, char **argv);
 void	hash_array(t_data *var);
