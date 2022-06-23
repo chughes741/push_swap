@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Shift all elements up in stack_a, first becomes the last
-void	rotate_a(t_array *var) // TODO add move to ->moves
+void	rotate_a(t_array *var)
 {
 	int	temp;
 	int	i;
@@ -25,11 +25,12 @@ void	rotate_a(t_array *var) // TODO add move to ->moves
 	while (++i < var->n_a - 1)
 		var->stack_a[i] = var->stack_a[i + 1];
 	var->stack_a[i] = temp;
+	ft_str_append(var->moves, "ra ");
 	return ;
 }
 
 // Shift all elements up in stack_b, first becomes the last
-void	rotate_b(t_array *var) // TODO add move to ->moves
+void	rotate_b(t_array *var)
 {
 	int	temp;
 	int	i;
@@ -41,10 +42,11 @@ void	rotate_b(t_array *var) // TODO add move to ->moves
 	while (++i < var->n_b - 1)
 		var->stack_b[i] = var->stack_b[i + 1];
 	var->stack_b[i] = temp;
+	ft_str_append(var->moves, "rb ");
 	return ;
 }
 
-void	rotate_both(t_array *var) // TODO add move to ->moves
+void	rotate_both(t_array *var)
 {
 	rotate_a(var);
 	rotate_b(var);
