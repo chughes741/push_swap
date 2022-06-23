@@ -12,27 +12,22 @@
 
 #include "../push_swap.h"
 
-void	hash_array(unsigned *array, unsigned n)
+void	hash_array(t_array *var)
 {
-	unsigned	i;
-	unsigned	j;
-	unsigned	min_val;
+	int	i;
+	int	j;
+	int	min;
 
 	i = -1;
-	while (++i <= n)
+	while (++i <= var->n_a)
 	{
-		min_val = UINT32_MAX;
-		j = -1;
-		while (++j < n)
+		j = 0;
+		min = 0;
+		while (++j < var->n_a)
 		{
-			if (array[j] > i + 1 && array[j] < min_val)
-				min_val = array[j];
+			if (var->args[j] < var->args[min])
+				min = j;
 		}
-		j = -1;
-		while (++j < n)
-		{
-			if (array[j] == min_val)
-				array[j] = i;
-		}
-	}
+		var->stack_a[min] = i;
+	}	
 }

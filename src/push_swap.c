@@ -20,8 +20,7 @@ int	main(int argc, char *argv[])
 		exit(0);
 	var.n_a = (unsigned)argc - 1; // TODO input as a single string
 	var.args = parse_args(argc, argv); // TODO input as a single string
-	var.stack_a = itou(var.args, var.n_a); // TODO pass only t_arrary*
-	hash_array(var.stack_a, var.n_a); // TODO pass only t_array*
+	hash_array(&var);
 	list_moves(&var);
 	return (0);
 }
