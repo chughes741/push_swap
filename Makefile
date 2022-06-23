@@ -22,6 +22,9 @@ OBJDIR	=	bin/
 SRCS	=	$(wildcard $(SRCDIR)*.c) # Change to file names before sub
 OBJS = $(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
+# Test arguments
+T_ARGS	= 0 9 8 7 6 5 1 2 3 412 421 901 -2340 -34 3441 -2 42342
+
 # Targets
 all: $(LDIR)/$(LIBFT) $(NAME)
 
@@ -55,7 +58,7 @@ re: fclean all
 
 test: re
 	$(HIDE)clear
-	$(HIDE)./$(NAME) 0 9 8 7 6 5 1 2 3 412 421 901 -2340 -34 3441 -2 42342
+	$(HIDE)./$(NAME) $(T_ARGS)
 	$(HIDE)make fclean
 
 val: re
@@ -66,4 +69,4 @@ val: re
 		--show-leak-kinds=all	\
 		--read-var-info=yes		\
 		--read-inline-info=yes	\
-		./push_swap 0 9 8 7 6 5 1 2 3 412 421 901 -2340 -34 3441 -2 42342
+		./$(NAME) $(T_ARGS)
