@@ -36,11 +36,11 @@ static void	split_stack(t_array *var)
 	{
 		if (var->stack_a[0] < half_length)
 		{
-			push(var->stack_a, var->stack_b, var->n_a, var->n_b);
+			push_b(var);
 			i++;
 		}
 		else
-			rotate(var->stack_a, var->n_a);
+			rotate_a(var);
 	}
 	return ;
 }
@@ -52,7 +52,7 @@ static void	swap_sort_a(t_array *var)
 		if (var->stack_a[0] > var->stack_a[1] && var->stack_a[1])
 		{
 			swap_a(var);
-			rev_rotate_a(var);
+			r_rotate_a(var);
 		}
 		else
 			rotate_a(var);
@@ -67,7 +67,7 @@ static void	swap_sort_b(t_array *var)
 		if (var->stack_b[0] > var->stack_b[1] && var->stack_b[1])
 		{
 			swap_b(var);
-			rev_rotate_b(var);
+			r_rotate_b(var);
 		}
 		else
 			rotate_b(var);
