@@ -17,7 +17,7 @@ int	main(int argc, char *argv[])
 	static t_array	*var;
 
 	input_check(argc, argv); // TODO sort out input check
-	var = var_init(var, argc, argv); // TODO argv as single string
+	var_init(var, argc, argv); // TODO argv as single string
 	hash_array(var);
 	list_moves(var);
 	return (0);
