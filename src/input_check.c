@@ -51,6 +51,6 @@ int	input_check(int argc, char **argv)
 	if (dupe_input(argv))
 		err = 3;
 	if (err > 1)
-		err = ft_printf("Error\n");
+		err = printf("Error\n");
 	return (err);
 }
