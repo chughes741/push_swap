@@ -33,6 +33,7 @@ c_cpp_properties.json
 *.dylib
 
 # Executables
+push_swap
 *.exe
 *.out
 *.app
