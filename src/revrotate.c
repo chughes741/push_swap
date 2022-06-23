@@ -15,7 +15,7 @@
 // Shift all elements down in the stack_a, last becomes the first
 void	r_rotate_a(t_array *array) // TODO add move to ->moves
 {
-	unsigned	temp;
+	int	temp;
 
 	if (array->n_a <= 1)
 		return ;
@@ -29,7 +29,7 @@ void	r_rotate_a(t_array *array) // TODO add move to ->moves
 // Shift all elements down in the stack_b, last becomes the first
 void	r_rotate_b(t_array *array) // TODO add move to ->moves
 {
-	unsigned	temp;
+	int	temp;
 
 	if (array->n_b <= 1)
 		return ;

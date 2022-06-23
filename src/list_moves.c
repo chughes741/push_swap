@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-static int	in_order(unsigned *stack, unsigned size)
+static int	in_order(int *stack, int size)
 {
-	unsigned	n;
+	int	n;
 
 	n = -1;
 	while (++n < size)
@@ -27,8 +27,8 @@ static int	in_order(unsigned *stack, unsigned size)
 
 static void	split_stack(t_array *array)
 {
-	unsigned	i;
-	unsigned	half_length;
+	int	i;
+	int	half_length;
 
 	i = 0;
 	half_length = array->n_a / 2;
@@ -45,7 +45,7 @@ static void	split_stack(t_array *array)
 	return ;
 }
 
-static void	swap_sort(unsigned *stack, unsigned size)
+static void	swap_sort(int *stack, int size)
 {
 	while (in_order(stack, size))
 	{
@@ -62,7 +62,7 @@ static void	swap_sort(unsigned *stack, unsigned size)
 
 static void	merge_stack(t_array *array)
 {
-	unsigned	i;
+	int	i;
 
 	i = array->n_b + 1;
 	while (--i)

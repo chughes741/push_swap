@@ -15,8 +15,8 @@
 // Shift all elements up in stack_a, first becomes the last
 void	rotate_a(t_array *array) // TODO add move to ->moves
 {
-	unsigned	temp;
-	unsigned	i;
+	int	temp;
+	int	i;
 
 	if (array->n_a <= 1)
 		return ;
@@ -31,8 +31,8 @@ void	rotate_a(t_array *array) // TODO add move to ->moves
 // Shift all elements up in stack_b, first becomes the last
 void	rotate_b(t_array *array) // TODO add move to ->moves
 {
-	unsigned	temp;
-	unsigned	i;
+	int	temp;
+	int	i;
 
 	if (array->n_b <= 1)
 		return ;

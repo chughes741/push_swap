@@ -18,30 +18,30 @@
 # include <limits.h>
 
 typedef struct t_array {
-	int			*args;
-	unsigned	*stack_a;
-	unsigned	*stack_b;
-	unsigned	n_a;
-	unsigned	n_b;
-	char		*moves;
-}				t_array;
+	int		*args;
+	int		*stack_a;
+	int		*stack_b;
+	int		n_a;
+	int		n_b;
+	char	*moves;
+}			t_array;
 
-void		push_a(t_array *var);
-void		push_b(t_array *var);
-void		rotate_a(t_array *var);
-void		rotate_b(t_array *var);
-void		rotate_both(t_array *var);
-void		swap_a(t_array *var);
-void		swap_b(t_array *var);
-void		swap_both(t_array *var);
-void		r_rotate_a(t_array *var);
-void		r_rotate_b(t_array *var);
-void		r_rotate_both(t_array *var);
+void	push_a(t_array *var);
+void	push_b(t_array *var);
+void	rotate_a(t_array *var);
+void	rotate_b(t_array *var);
+void	rotate_both(t_array *var);
+void	swap_a(t_array *var);
+void	swap_b(t_array *var);
+void	swap_both(t_array *var);
+void	r_rotate_a(t_array *var);
+void	r_rotate_b(t_array *var);
+void	r_rotate_both(t_array *var);
 
-int			input_check(int argc, char **argv);
-int			*parse_args(int argc, char **argv);
-void		hash_array(t_array *var)
-void		list_moves(t_array *var);
-int			ft_strcmp(const char *str1, const char *str2);
+int		input_check(int argc, char **argv);
+int		*parse_args(int argc, char **argv);
+void	hash_array(t_array *var);
+void	list_moves(t_array *var);
+int		ft_strcmp(const char *str1, const char *str2);
 
 #endif

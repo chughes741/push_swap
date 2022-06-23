@@ -15,7 +15,7 @@
 // Push top element from stack_b to stack_a
 void	push_a(t_array *array) // TODO add move to ->moves and ++/-- to sizes
 {
-	unsigned	i;
+	int	i;
 
 	if (array->n_b == 0)
 		return ;
@@ -31,7 +31,7 @@ void	push_a(t_array *array) // TODO add move to ->moves and ++/-- to sizes
 // Push top element from stack_a to stack_b
 void	push_b(t_array *array) // TODO add move to ->moves and ++/-- to sizes
 {
-	unsigned	i;
+	int	i;
 
 	if (array->n_a == 0)
 		return ;

@@ -15,7 +15,7 @@
 // Swaps the first two elements of stack_a
 void	swap_a(t_array *array) // TODO add move to ->moves
 {
-	unsigned	temp;
+	int	temp;
 
 	if (array->n_a <= 1)
 		return ;
@@ -28,7 +28,7 @@ void	swap_a(t_array *array) // TODO add move to ->moves
 // Swaps the first two elements of stack_b
 void	swap_b(t_array *array) // TODO add move to ->moves
 {
-	unsigned	temp;
+	int	temp;
 
 	if (array->n_b <= 1)
 		return ;
