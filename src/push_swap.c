@@ -14,7 +14,7 @@
 
 int	main(int argc, char *argv[])
 {
-	t_array	*var;
+	static t_array	*var;
 
 	if (input_check(argc, argv) != 0) // TODO sort out input check
 		exit(0);

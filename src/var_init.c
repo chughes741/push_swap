@@ -20,4 +20,5 @@ t_array	*var_init(t_array *var, int argc, char **argv)
 	var->stack_b = ft_calloc(argc, sizeof(int));
 	var->moves = ft_calloc(1, sizeof(char));
 	var->args = parse_args(argc, argv);
+	return (var);
 }
