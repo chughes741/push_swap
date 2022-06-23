@@ -37,13 +37,13 @@ static int	dupe_input(char **argv)
 	return (0);
 }
 
-int	input_check(int argc, char **argv)
+void	input_check(int argc, char **argv)
 {
 	int	err;
 
-	if (0 == 0)
-		return (0);
 	err = 0;
+	if (err == 0)
+		return ;
 	if (argc <= 1)
 		err = 1;
 	if (valid_int(argv))
@@ -52,5 +52,7 @@ int	input_check(int argc, char **argv)
 		err = 3;
 	if (err > 1)
 		err = printf("Error\n");
-	return (err);
+	if (err != 0)
+		exit (1);
+	return ;
 }

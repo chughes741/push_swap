@@ -39,7 +39,7 @@ void	r_rotate_b(t_array *var);
 void	r_rotate_both(t_array *var);
 
 t_array	*var_init(t_array *var, int argc, char **argv);
-int		input_check(int argc, char **argv);
+void	input_check(int argc, char **argv);
 int		*parse_args(int argc, char **argv);
 void	hash_array(t_array *var);
 void	list_moves(t_array *var);
