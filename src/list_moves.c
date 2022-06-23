@@ -45,17 +45,32 @@ static void	split_stack(t_array *var)
 	return ;
 }
 
-static void	swap_sort(int *stack, int size)
+static void	swap_sort_a(t_array *var)
 {
-	while (in_order(stack, size))
+	while (in_order(var->stack_a, var->n_a))
 	{
-		if (stack[0] > stack[1] && stack[1])
+		if (var->stack_a[0] > var->stack_a[1] && var->stack_a[1])
 		{
-			swap(stack, size);
-			rrotate(stack, size);
+			swap_a(var);
+			rev_rotate_a(var);
 		}
 		else
-			rotate(stack, size);
+			rotate_a(var);
+	}
+	return ;
+}
+
+static void	swap_sort_b(t_array *var)
+{
+	while (in_order(var->stack_b, var->n_b))
+	{
+		if (var->stack_b[0] > var->stack_b[1] && var->stack_b[1])
+		{
+			swap_b(var);
+			rev_rotate_b(var);
+		}
+		else
+			rotate_b(var);
 	}
 	return ;
 }
@@ -66,15 +81,15 @@ static void	merge_stack(t_array *var)
 
 	i = var->n_b + 1;
 	while (--i)
-		push(var->stack_b, var->stack_a, var->n_b, var->n_b);
+		push_a(var);
 	return ;
 }
 
 void	list_moves(t_array *var)
 {
 	split_stack(var);
-	swap_sort(var->stack_b, var->n_b);
-	swap_sort(var->stack_a, var->n_a);
+	swap_sort_a(var);
+	swap_sort_b(var);
 	merge_stack(var);
 	return ;
 }
