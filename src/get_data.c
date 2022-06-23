@@ -12,18 +12,18 @@
 
 #include "../push_swap.h"
 
-t_data	*get_data(int argc, char **argv)
+t_data	*get_data(void)
 {
 	static t_data* data = NULL;
 
 	if (data == NULL)
 	{
 		data = ft_calloc(1, sizeof(t_data));
-		data->n_a = argc - 1;
-		data->stack_a = ft_calloc(argc, sizeof(int));
-		data->stack_b = ft_calloc(argc, sizeof(int));
+		// data->n_a = argc - 1;
+		// data->stack_a = ft_calloc(argc, sizeof(int));
+		// data->stack_b = ft_calloc(argc, sizeof(int));
 		data->moves = ft_calloc(1, sizeof(char));
-		data->args = parse_args(argc, argv);
+		// data->args = parse_args(argc, argv);
 	}
 	return (data);
 }
