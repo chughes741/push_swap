@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hash_array.c                                       :+:      :+:    :+:   */
+/*   var_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 14:53:39 by chughes           #+#    #+#             */
-/*   Updated: 2022/06/20 14:53:40 by chughes          ###   ########.fr       */
+/*   Created: 2022/06/23 12:55:51 by chughes           #+#    #+#             */
+/*   Updated: 2022/06/23 12:55:53 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-// 17 args
-void	hash_array(t_array *var)
-{
-	int	i;
-	int	j;
-	int	min;
 
-	i = -1;
-	while (++i < var->n_a)
-	{
-		j = 0;
-		min = 0;
-		while (++j < var->n_a)
-		{
-			if (var->args[j] < var->args[min])
-				min = j;
-		}
-		var->stack_a[min] = i;
-	}	
+t_array	*var_init(t_array *var, int argc, char **argv)
+{
+	var = ft_calloc(1, sizeof(t_array));
+	var->n_a = argc - 1;
+	var->stack_a = ft_calloc(argc, sizeof(int));
+	var->stack_b = ft_calloc(argc, sizeof(int));
+	var->moves = ft_calloc(1, sizeof(char));
+	var->args = parse_args(argc, argv);
 }

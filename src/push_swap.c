@@ -14,13 +14,12 @@
 
 int	main(int argc, char *argv[])
 {
-	static t_array	var;
+	t_array	*var;
 
 	if (input_check(argc, argv) != 0) // TODO sort out input check
 		exit(0);
-	var.n_a = argc - 1; // TODO input as a single string
-	var.args = parse_args(argc, argv); // TODO input as a single string
-	hash_array(&var);
-	list_moves(&var);
+	var = var_init(var, argc, argv); // TODO argv as single string
+	hash_array(var);
+	list_moves(var);
 	return (0);
 }
