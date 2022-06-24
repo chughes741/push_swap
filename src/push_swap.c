@@ -14,10 +14,8 @@
 
 int	main(int argc, char *argv[])
 {
-	t_data	*data;
-
 	input_check(argc, argv); // TODO sort out input check
 	set_up(argc, argv);
-	list_moves(data);
+	list_moves();
 	return (0);
 }

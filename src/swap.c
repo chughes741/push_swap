@@ -13,37 +13,41 @@
 #include "../push_swap.h"
 
 // Swaps the first two elements of stack_a
-void	swap_a(t_data *var)
+void	swap_a(void)
 {
+	t_data	*data;
 	int	temp;
 
-	if (var->n_a <= 1)
+	data = get_data();
+	if (data->n_a <= 1)
 		return ;
-	temp = var->stack_a[0];
-	var->stack_a[0] = var->stack_a[1];
-	var->stack_a[1] = temp;
-	ft_str_append(var->moves, "sa ");
+	temp = data->stack_a[0];
+	data->stack_a[0] = data->stack_a[1];
+	data->stack_a[1] = temp;
+	ft_str_append(data->moves, "sa ");
 	return ;
 }
 
 // Swaps the first two elements of stack_b
-void	swap_b(t_data *var)
+void	swap_b(void)
 {
+	t_data	*data;
 	int	temp;
 
-	if (var->n_b <= 1)
+	data = get_data();
+	if (data->n_b <= 1)
 		return ;
-	temp = var->stack_b[0];
-	var->stack_b[0] = var->stack_b[1];
-	var->stack_b[1] = temp;
-	ft_str_append(var->moves, "sb ");
+	temp = data->stack_b[0];
+	data->stack_b[0] = data->stack_b[1];
+	data->stack_b[1] = temp;
+	ft_str_append(data->moves, "sb ");
 	return ;
 }
 
 // Swaps both stacks top two elements
-void	swap_both(t_data *var)
+void	swap_both(void)
 {
-	swap_a(var);
-	swap_b(var);
+	swap_a();
+	swap_b();
 	return ;
 }

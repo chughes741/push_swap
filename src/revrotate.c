@@ -13,39 +13,43 @@
 #include "../push_swap.h"
 
 // Shift all elements down in the stack_a, last becomes the first
-void	r_rotate_a(t_data *var)
+void	r_rotate_a(void)
 {
+	t_data	*data;
 	int	temp;
 
-	if (var->n_a <= 1)
+	data = get_data();
+	if (data->n_a <= 1)
 		return ;
-	temp = var->stack_a[var->n_a - 1];
-	while (--var->n_a)
-		var->stack_a[var->n_a] = var->stack_a[var->n_a - 1];
-	var->stack_a[0] = temp;
-	ft_str_append(var->moves, "rra ");
+	temp = data->stack_a[data->n_a - 1];
+	while (--data->n_a)
+		data->stack_a[data->n_a] = data->stack_a[data->n_a - 1];
+	data->stack_a[0] = temp;
+	ft_str_append(data->moves, "rra ");
 	return ;
 }
 
 // Shift all elements down in the stack_b, last becomes the first
-void	r_rotate_b(t_data *var)
+void	r_rotate_b(void)
 {
+	t_data	*data;
 	int	temp;
 
-	if (var->n_b <= 1)
+	data = get_data();
+	if (data->n_b <= 1)
 		return ;
-	temp = var->stack_b[var->n_b - 1];
-	while (--var->n_b)
-		var->stack_b[var->n_b] = var->stack_b[var->n_b - 1];
-	var->stack_b[0] = temp;
-	ft_str_append(var->moves, "rrb ");
+	temp = data->stack_b[data->n_b - 1];
+	while (--data->n_b)
+		data->stack_b[data->n_b] = data->stack_b[data->n_b - 1];
+	data->stack_b[0] = temp;
+	ft_str_append(data->moves, "rrb ");
 	return ;
 }
 
 // Shifts all elements down one in both stacks
-void	r_rotate_both(t_data *var)
+void	r_rotate_both(void)
 {
-	r_rotate_a(var);
-	r_rotate_b(var);
+	r_rotate_a();
+	r_rotate_b();
 	return ;
 }

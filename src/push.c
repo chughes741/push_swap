@@ -13,39 +13,43 @@
 #include "../push_swap.h"
 
 // Push top element from stack_b to stack_a
-void	push_a(t_data *var)
+void	push_a(void)
 {
+	t_data	*data;
 	int	i;
 
-	if (var->n_b == 0)
+	data = get_data();
+	if (data->n_b == 0)
 		return ;
-	while (--var->n_a)
-		var->stack_a[var->n_a] = var->stack_a[var->n_a - 1];
-	var->stack_a[0] = var->stack_b[0];
+	while (--data->n_a)
+		data->stack_a[data->n_a] = data->stack_a[data->n_a - 1];
+	data->stack_a[0] = data->stack_b[0];
 	i = -1;
-	while (++i < var->n_b - 1)
-		var->stack_b[i] = var->stack_b[i + 1];
-	var->n_a += 1;
-	var->n_b -= 1;
-	ft_str_append(var->moves, "pa ");
+	while (++i < data->n_b - 1)
+		data->stack_b[i] = data->stack_b[i + 1];
+	data->n_a += 1;
+	data->n_b -= 1;
+	ft_str_append(data->moves, "pa ");
 	return ;	
 }
 
 // Push top element from stack_a to stack_b
-void	push_b(t_data *var)
+void	push_b(void)
 {
+	t_data	*data;
 	int	i;
 
-	if (var->n_a == 0)
+	data = get_data();
+	if (data->n_a == 0)
 		return ;
-	while (--var->n_b)
-		var->stack_b[var->n_b] = var->stack_b[var->n_b - 1];
-	var->stack_b[0] = var->stack_a[0];
+	while (--data->n_b)
+		data->stack_b[data->n_b] = data->stack_b[data->n_b - 1];
+	data->stack_b[0] = data->stack_a[0];
 	i = -1;
-	while (++i < var->n_a - 1)
-		var->stack_a[i] = var->stack_a[i + 1];
-	var->n_a -= 1;
-	var->n_b += 1;
-	ft_str_append(var->moves, "pb ");
+	while (++i < data->n_a - 1)
+		data->stack_a[i] = data->stack_a[i + 1];
+	data->n_a -= 1;
+	data->n_b += 1;
+	ft_str_append(data->moves, "pb ");
 	return ;	
 }

@@ -13,41 +13,45 @@
 #include "../push_swap.h"
 
 // Shift all elements up in stack_a, first becomes the last
-void	rotate_a(t_data *var)
+void	rotate_a(void)
 {
+	t_data	*data;
 	int	temp;
 	int	i;
 
-	if (var->n_a <= 1)
+	data = get_data();
+	if (data->n_a <= 1)
 		return ;
 	i = -1;
-	temp = var->stack_a[0];
-	while (++i < var->n_a - 1)
-		var->stack_a[i] = var->stack_a[i + 1];
-	var->stack_a[i] = temp;
-	ft_str_append(var->moves, "ra ");
+	temp = data->stack_a[0];
+	while (++i < data->n_a - 1)
+		data->stack_a[i] = data->stack_a[i + 1];
+	data->stack_a[i] = temp;
+	ft_str_append(data->moves, "ra ");
 	return ;
 }
 
 // Shift all elements up in stack_b, first becomes the last
-void	rotate_b(t_data *var)
+void	rotate_b(void)
 {
+	t_data	*data;
 	int	temp;
 	int	i;
 
-	if (var->n_b <= 1)
+	data = get_data();
+	if (data->n_b <= 1)
 		return ;
 	i = -1;
-	temp = var->stack_b[0];
-	while (++i < var->n_b - 1)
-		var->stack_b[i] = var->stack_b[i + 1];
-	var->stack_b[i] = temp;
-	ft_str_append(var->moves, "rb ");
+	temp = data->stack_b[0];
+	while (++i < data->n_b - 1)
+		data->stack_b[i] = data->stack_b[i + 1];
+	data->stack_b[i] = temp;
+	ft_str_append(data->moves, "rb ");
 	return ;
 }
 
-void	rotate_both(t_data *var)
+void	rotate_both(void)
 {
-	rotate_a(var);
-	rotate_b(var);
+	rotate_a();
+	rotate_b();
 }

@@ -25,71 +25,84 @@ static int	in_order(int *stack, int size)
 	return (0);
 }
 
-static void	split_stack(t_data *var)
+static void	split_stack(void)
 {
+	t_data	*data;
 	int	i;
 	int	half_length;
 
+	data = get_data();
 	i = 0;
-	half_length = var->n_a / 2;
+	half_length = data->n_a / 2;
 	while (i < half_length)
 	{
-		if (var->stack_a[0] < half_length)
+		if (data->stack_a[0] < half_length)
 		{
-			push_b(var);
+			push_b();
 			i++;
 		}
 		else
-			rotate_a(var);
+			rotate_a();
 	}
 	return ;
 }
 
-static void	swap_sort_a(t_data *var)
+static void	swap_sort_a(void)
 {
-	while (in_order(var->stack_a, var->n_a))
+	t_data	*data;
+
+	data = get_data();
+	while (in_order(data->stack_a, data->n_a))
 	{
-		if (var->stack_a[0] > var->stack_a[1] && var->stack_a[1])
+		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
 		{
-			swap_a(var);
-			r_rotate_a(var);
+			swap_a();
+			r_rotate_a();
 		}
 		else
-			rotate_a(var);
+			rotate_a();
 	}
 	return ;
 }
 
-static void	swap_sort_b(t_data *var)
+static void	swap_sort_b(void)
 {
-	while (in_order(var->stack_b, var->n_b))
+	t_data	*data;
+
+	data = get_data();
+	while (in_order(data->stack_b, data->n_b))
 	{
-		if (var->stack_b[0] > var->stack_b[1] && var->stack_b[1])
+		if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
 		{
-			swap_b(var);
-			r_rotate_b(var);
+			swap_b();
+			r_rotate_b();
 		}
 		else
-			rotate_b(var);
+			rotate_b();
 	}
 	return ;
 }
 
-static void	merge_stack(t_data *var)
+static void	merge_stack(void)
 {
+	t_data	*data;
 	int	i;
 
-	i = var->n_b + 1;
+	data = get_data();
+	i = data->n_b + 1;
 	while (--i)
-		push_a(var);
+		push_a();
 	return ;
 }
 
-void	list_moves(t_data *var)
+void	list_moves(void)
 {
-	split_stack(var);
-	swap_sort_a(var);
-	swap_sort_b(var);
-	merge_stack(var);
+	t_data	*data;
+
+	data = get_data();
+	split_stack();
+	swap_sort_a();
+	swap_sort_b();
+	merge_stack();
 	return ;
 }
