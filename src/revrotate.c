@@ -25,7 +25,7 @@ void	r_rotate_a(void)
 	while (--data->n_a)
 		data->stack_a[data->n_a] = data->stack_a[data->n_a - 1];
 	data->stack_a[0] = temp;
-	ft_str_append(data->moves, "rra ");
+	data->moves = ft_str_prepend(data->moves, "rra\n");
 	return ;
 }
 
@@ -42,7 +42,7 @@ void	r_rotate_b(void)
 	while (--data->n_b)
 		data->stack_b[data->n_b] = data->stack_b[data->n_b - 1];
 	data->stack_b[0] = temp;
-	ft_str_append(data->moves, "rrb ");
+	data->moves = ft_str_prepend(data->moves, "rrb\n");
 	return ;
 }
 

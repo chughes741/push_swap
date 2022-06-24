@@ -24,7 +24,7 @@ void	swap_a(void)
 	temp = data->stack_a[0];
 	data->stack_a[0] = data->stack_a[1];
 	data->stack_a[1] = temp;
-	ft_str_append(data->moves, "sa ");
+	data->moves = ft_str_prepend(data->moves, "sa\n");
 	return ;
 }
 
@@ -40,7 +40,7 @@ void	swap_b(void)
 	temp = data->stack_b[0];
 	data->stack_b[0] = data->stack_b[1];
 	data->stack_b[1] = temp;
-	ft_str_append(data->moves, "sb ");
+	data->moves = ft_str_prepend(data->moves, "sb\n");
 	return ;
 }
 
