@@ -16,9 +16,8 @@ int	main(int argc, char *argv[])
 {
 	t_data	*data;
 
-	input_check(); // TODO sort out input check
-	data = get_data(argc, argv); // TODO argv as single string
-	hash_array(data);
+	input_check(argc, argv); // TODO sort out input check
+	set_up(argc, argv);
 	list_moves(data);
 	return (0);
 }

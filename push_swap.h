@@ -26,23 +26,24 @@ typedef struct t_data {
 	char	*moves;
 }			t_data;
 
-void	push_a(t_data *var);
-void	push_b(t_data *var);
-void	rotate_a(t_data *var);
-void	rotate_b(t_data *var);
-void	rotate_both(t_data *var);
-void	swap_a(t_data *var);
-void	swap_b(t_data *var);
-void	swap_both(t_data *var);
-void	r_rotate_a(t_data *var);
-void	r_rotate_b(t_data *var);
-void	r_rotate_both(t_data *var);
+void	push_a(void);
+void	push_b(void);
+void	rotate_a(void);
+void	rotate_b(void);
+void	rotate_both(void);
+void	swap_a(void);
+void	swap_b(void);
+void	swap_both(void);
+void	r_rotate_a(void);
+void	r_rotate_b(void);
+void	r_rotate_both(void);
 
-t_data	*get_data(void);
 void	input_check(int argc, char **argv);
+void	set_up(int argc, char **argv);
+t_data	*get_data(void);
 int		*parse_args(int argc, char **argv);
-void	hash_array(t_data *var);
-void	list_moves(t_data *var);
+void	hash_array(void);
+void	list_moves(void);
 int		ft_strcmp(const char *str1, const char *str2);
 
 #endif

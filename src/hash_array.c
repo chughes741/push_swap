@@ -11,23 +11,25 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-// 17 args
-void	hash_array(t_data *var)
+
+void	hash_array(void)
 {
-	int	i;
-	int	j;
-	int	min;
+	int		i;
+	int		j;
+	int		min;
+	t_data	*data;
 
 	i = -1;
-	while (++i < var->n_a)
+	data = get_data();
+	while (++i < data->n_a)
 	{
 		j = 0;
 		min = 0;
-		while (++j < var->n_a)
+		while (++j < data->n_a)
 		{
-			if (var->args[j] < var->args[min])
+			if (data->args[j] < data->args[min])
 				min = j;
 		}
-		var->stack_a[min] = i;
+		data->stack_a[min] = i;
 	}	
 }

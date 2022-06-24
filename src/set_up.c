@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_data.c                                         :+:      :+:    :+:   */
+/*   set_up.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 13:33:54 by chughes           #+#    #+#             */
-/*   Updated: 2022/06/23 13:37:44 by chughes          ###   ########.fr       */
+/*   Created: 2022/06/24 14:55:36 by chughes           #+#    #+#             */
+/*   Updated: 2022/06/24 14:55:57 by chughes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_data	*get_data(void)
+void	set_up(int argc, char **argv)
 {
-	static t_data* data = NULL;
+	t_data	*data;
 
-	if (data == NULL)
-	{
-		data = ft_calloc(1, sizeof(t_data));
-		data->moves = ft_calloc(1, sizeof(char));
-	}
-	return (data);
+	data = get_data();
+	data->args = parse_args(argc, argv);
+	data->n_a = argc - 1; // TODO inputs as single string
+	data->stack_a = ft_calloc(data->n_a + 1, sizeof(int));
+	data->stack_b = ft_calloc(data->n_a + 1, sizeof(int));
+	hash_array();
+	return ;
 }
