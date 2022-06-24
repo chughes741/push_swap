@@ -14,10 +14,10 @@
 
 void	hash_array(void)
 {
+	t_data	*data;
 	int		i;
 	int		j;
 	int		min;
-	t_data	*data;
 
 	i = -1;
 	data = get_data();
@@ -31,5 +31,8 @@ void	hash_array(void)
 				min = j;
 		}
 		data->stack_a[min] = i;
-	}	
+	}
+	for (int i = 0; i < data->n_a; ++i)
+		printf("%i ", data->stack_a[i]);
+	printf("\n");
 }

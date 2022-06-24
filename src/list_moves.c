@@ -25,27 +25,27 @@ static int	in_order(int *stack, int size)
 	return (0);
 }
 
-static void	split_stack(void)
-{
-	t_data	*data;
-	int	i;
-	int	half_length;
-
-	data = get_data();
-	i = 0;
-	half_length = data->n_a / 2;
-	while (i < half_length)
-	{
-		if (data->stack_a[0] < half_length)
-		{
-			push_b();
-			i++;
-		}
-		else
-			rotate_a();
-	}
-	return ;
-}
+// static void	split_stack(void)
+// {
+	// t_data	*data;
+	// int	i;
+	// int	half_length;
+// 
+	// data = get_data();
+	// i = 0;
+	// half_length = data->n_a / 2;
+	// while (i < half_length)
+	// {
+		// if (data->stack_a[0] < half_length)
+		// {
+			// push_b();
+			// i++;
+		// }
+		// else
+			// rotate_a();
+	// }
+	// return ;
+// }
 
 static void	swap_sort_a(void)
 {
@@ -54,6 +54,10 @@ static void	swap_sort_a(void)
 	data = get_data();
 	while (in_order(data->stack_a, data->n_a))
 	{
+		// for (int i = 0; i < data->n_a; ++i)
+			// printf("%i ", data->stack_a[i]);
+		// printf("\n");
+		sleep(1);
 		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
 		{
 			swap_a();
@@ -65,44 +69,44 @@ static void	swap_sort_a(void)
 	return ;
 }
 
-static void	swap_sort_b(void)
-{
-	t_data	*data;
+// static void	swap_sort_b(void)
+// {
+	// t_data	*data;
+// 
+	// data = get_data();
+	// while (in_order(data->stack_b, data->n_b))
+	// {
+		// if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
+		// {
+			// swap_b();
+			// r_rotate_b();
+		// }
+		// else
+			// rotate_b();
+	// }
+	// return ;
+// }
 
-	data = get_data();
-	while (in_order(data->stack_b, data->n_b))
-	{
-		if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
-		{
-			swap_b();
-			r_rotate_b();
-		}
-		else
-			rotate_b();
-	}
-	return ;
-}
-
-static void	merge_stack(void)
-{
-	t_data	*data;
-	int	i;
-
-	data = get_data();
-	i = data->n_b + 1;
-	while (--i)
-		push_a();
-	return ;
-}
+// static void	merge_stack(void)
+// {
+	// t_data	*data;
+	// int	i;
+// 
+	// data = get_data();
+	// i = data->n_b + 1;
+	// while (--i)
+		// push_a();
+	// return ;
+// }
 
 void	list_moves(void)
 {
 	t_data	*data;
 
 	data = get_data();
-	split_stack();
+	// split_stack();
 	swap_sort_a();
-	swap_sort_b();
-	merge_stack();
+	// swap_sort_b();
+	// merge_stack();
 	return ;
 }
