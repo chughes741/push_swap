@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+// 100 ~7500
 int	main(int argc, char *argv[])
 {
 	t_data	*data;
@@ -21,5 +21,8 @@ int	main(int argc, char *argv[])
 	list_moves();
 	data = get_data();
 	printf("%s", data->moves);
+	// for (int i = 0; i < data->n_a; ++i)
+		// printf("%2i ", data->stack_a[i]);
+	// printf("\n");
 	return (0);
 }

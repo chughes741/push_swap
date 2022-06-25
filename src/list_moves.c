@@ -16,36 +16,36 @@ static int	in_order(int *stack, int size)
 {
 	int	n;
 
-	n = -1;
+	n = 0;
 	while (++n < size)
 	{
-		if (stack[n] != n)
+		if (stack[n] <= stack[n - 1])
 			return (1);
 	}
 	return (0);
 }
 
-// static void	split_stack(void)
-// {
-	// t_data	*data;
-	// int	i;
-	// int	half_length;
-// 
-	// data = get_data();
-	// i = 0;
-	// half_length = data->n_a / 2;
-	// while (i < half_length)
-	// {
-		// if (data->stack_a[0] < half_length)
-		// {
-			// push_b();
-			// i++;
-		// }
-		// else
-			// rotate_a();
-	// }
-	// return ;
-// }
+static void	split_stack(void)
+{
+	t_data	*data;
+	int	i;
+	int	half_length;
+
+	data = get_data();
+	i = 0;
+	half_length = data->n_a / 2;
+	while (i < half_length)
+	{
+		if (data->stack_a[0] < half_length)
+		{
+			push_b();
+			i++;
+		}
+		else
+			rotate_a();
+	}
+	return ;
+}
 
 static void	swap_sort_a(void)
 {
@@ -65,44 +65,47 @@ static void	swap_sort_a(void)
 	return ;
 }
 
-// static void	swap_sort_b(void)
-// {
-	// t_data	*data;
-// 
-	// data = get_data();
-	// while (in_order(data->stack_b, data->n_b))
-	// {
-		// if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
-		// {
-			// swap_b();
-			// r_rotate_b();
-		// }
-		// else
-			// rotate_b();
-	// }
-	// return ;
-// }
+static void	swap_sort_b(void)
+{
+	t_data	*data;
 
-// static void	merge_stack(void)
-// {
-	// t_data	*data;
-	// int	i;
-// 
-	// data = get_data();
-	// i = data->n_b + 1;
-	// while (--i)
-		// push_a();
-	// return ;
-// }
+	data = get_data();
+	while (in_order(data->stack_b, data->n_b))
+	{
+		if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
+		{
+			swap_b();
+			r_rotate_b();
+		}
+		else
+			rotate_b();
+	}
+	return ;
+}
+
+static void	merge_stack(void)
+{
+	t_data	*data;
+	int	i;
+
+	data = get_data();
+	i = data->n_b + 1;
+	while (--i)
+	{
+		r_rotate_b();
+		push_a();
+	}
+	return ;
+}
 
 void	list_moves(void)
 {
 	t_data	*data;
 
 	data = get_data();
-	// split_stack();
+	split_stack();
 	swap_sort_a();
-	// swap_sort_b();
-	// merge_stack();
+	swap_sort_b();
+	merge_stack();
 	return ;
 }
