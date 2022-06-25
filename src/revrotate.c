@@ -16,14 +16,16 @@
 void	r_rotate_a(void)
 {
 	t_data	*data;
-	int	temp;
+	int		temp;
+	int		i;
 
 	data = get_data();
 	if (data->n_a <= 1)
 		return ;
 	temp = data->stack_a[data->n_a - 1];
-	while (--data->n_a)
-		data->stack_a[data->n_a] = data->stack_a[data->n_a - 1];
+	i = data->n_a;
+	while (--i)
+		data->stack_a[i] = data->stack_a[i - 1];
 	data->stack_a[0] = temp;
 	data->moves = ft_str_prepend(data->moves, "rra\n");
 	return ;
@@ -33,14 +35,16 @@ void	r_rotate_a(void)
 void	r_rotate_b(void)
 {
 	t_data	*data;
-	int	temp;
+	int		temp;
+	int		i;
 
 	data = get_data();
 	if (data->n_b <= 1)
 		return ;
 	temp = data->stack_b[data->n_b - 1];
-	while (--data->n_b)
-		data->stack_b[data->n_b] = data->stack_b[data->n_b - 1];
+	i = data->n_b;
+	while (--i)
+		data->stack_b[i] = data->stack_b[i - 1];
 	data->stack_b[0] = temp;
 	data->moves = ft_str_prepend(data->moves, "rrb\n");
 	return ;
