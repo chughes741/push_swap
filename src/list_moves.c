@@ -54,10 +54,6 @@ static void	swap_sort_a(void)
 	data = get_data();
 	while (in_order(data->stack_a, data->n_a))
 	{
-		// for (int i = 0; i < data->n_a; ++i)
-			// printf("%i ", data->stack_a[i]);
-		// printf("\n");
-		sleep(1);
 		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
 		{
 			swap_a();
