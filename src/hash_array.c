@@ -17,22 +17,19 @@ void	hash_array(void)
 	t_data	*data;
 	int		i;
 	int		j;
-	int		min;
+	int		position;
 
 	i = -1;
 	data = get_data();
 	while (++i < data->n_a)
 	{
-		j = 0;
-		min = 0;
+		j = -1;
+		position = 0;
 		while (++j < data->n_a)
 		{
-			if (data->args[j] < data->args[min])
-				min = j;
+			if (data->args[j] < data->args[i] && j != i)
+				position += 1;
 		}
-		data->stack_a[min] = i;
+		data->stack_a[i] = position;
 	}
-	for (int i = 0; i < data->n_a; ++i)
-		printf("%i ", data->stack_a[i]);
-	printf("\n");
 }
