@@ -16,13 +16,17 @@
 void	push_a(void)
 {
 	t_data	*data;
-	int	i;
+	int		i;
 
 	data = get_data();
 	if (data->n_b == 0)
 		return ;
-	while (--data->n_a)
-		data->stack_a[data->n_a] = data->stack_a[data->n_a - 1];
+	if (data->n_a != 0)
+	{
+		i = data->n_a + 1;
+		while (--i)
+			data->stack_a[i] = data->stack_a[i - 1];
+	}
 	data->stack_a[0] = data->stack_b[0];
 	i = -1;
 	while (++i < data->n_b - 1)
@@ -37,13 +41,17 @@ void	push_a(void)
 void	push_b(void)
 {
 	t_data	*data;
-	int	i;
+	int		i;
 
 	data = get_data();
 	if (data->n_a == 0)
 		return ;
-	while (--data->n_b)
-		data->stack_b[data->n_b] = data->stack_b[data->n_b - 1];
+	if (data->n_b != 0)
+	{
+		i = data->n_b + 1;
+		while (--i)
+			data->stack_b[i] = data->stack_b[i - 1];
+	}
 	data->stack_b[0] = data->stack_a[0];
 	i = -1;
 	while (++i < data->n_a - 1)
