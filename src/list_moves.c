@@ -40,14 +40,12 @@ static void	split_stack(void)
 		if (data->stack_a[0] < half_length)
 		{
 			push_b();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 			i++;
 		}
 		else
 		{
 			rotate_a();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 		}
 	}
@@ -65,16 +63,13 @@ static void	swap_sort_a(void)
 		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
 		{
 			swap_a();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 			r_rotate_a();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 		}
 		else
 		{
 			rotate_a();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 		}
 	}
@@ -91,16 +86,13 @@ static void	swap_sort_b(void)
 		if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
 		{
 			swap_b();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 			r_rotate_b();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 		}
 		else
 		{
 			rotate_b();
-			sleep(1); // TESTING
 			print_stacks(); // TESTING
 		}
 	}
@@ -117,10 +109,8 @@ static void	merge_stack(void)
 	while (--i)
 	{
 		r_rotate_b();
-		sleep(1); // TESTING
 		print_stacks(); // TESTING
 		push_a();
-		sleep(1); // TESTING
 		print_stacks(); // TESTING
 	}
 	return ;

@@ -2,8 +2,10 @@
 #include "../push_swap.h"
 
 void	print_stacks(void) {
+	return;
 	t_data *data = get_data();
 
+	sleep(1);
 	printf("\e[1;1H\e[2J");
 	printf("  A | B  \n");
 	printf("---------\n");
