@@ -20,9 +20,6 @@ int	main(int argc, char *argv[])
 	set_up(argc, argv);
 	list_moves();
 	data = get_data();
-	printf("%s", data->moves);
-	// for (int i = 0; i < data->n_a; ++i)
-		// printf("%2i ", data->stack_a[i]);
-	// printf("\n");
+	// printf("%s", data->moves);
 	return (0);
 }

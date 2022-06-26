@@ -9,7 +9,10 @@
 			80
 		],
 		"editor.insertSpaces": false,
-		"editor.bracketPairColorization.enabled": false
+		"editor.bracketPairColorization.enabled": false,
+		"files.associations": {
+			"limits.h": "c"
+		}
 	},
 	"launch": {
 		"version": "0.2.0",
