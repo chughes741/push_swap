@@ -19,11 +19,20 @@ void	insertion_sort(void)
 	data = get_data();
 	while (data->n_a)
 	{
-		if (lowest_a() == 0)
-			push_b();
-		else
-			rotate_a(0);
+		while (lowest_a() != 0)
+		{
+			if (highest_a() != 0)
+				rotate_a(0);
+			else
+			{
+				push_b();
+				rotate_b(0);
+			}
+		}
+		push_b();
 	}
+	while (highest_b() != 0)
+		r_rotate_b(0);
 	while (data->n_b)
 		push_a();
 	return ;
