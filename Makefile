@@ -51,7 +51,6 @@ clean:
 
 # Removes objects and executables
 fclean: clean
-	$(HIDE)$(RM) *.dSYM
 	$(HIDE)$(RM) $(NAME)
 #	$(HIDE)$(RM) $(LDIR)$(LIBFT)
 #	$(HIDE)$(RM) $(LDIR)libft/libft.a
