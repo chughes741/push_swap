@@ -25,6 +25,40 @@ static int	in_order(int *stack, int size)
 	return (0);
 }
 
+static int	lowest_a(void)
+{
+	t_data	*data;
+	int		i;
+	int		position;
+
+	data = get_data();
+	i = 0;
+	position = 0;
+	while (++i < data->n_a)
+	{
+		if (data->stack_a[i] < data->stack_a[position])
+			position += i;
+	}
+	return (position);
+}
+
+static int	lowest_b(void)
+{
+	t_data	*data;
+	int		i;
+	int		position;
+
+	data = get_data();
+	i = 0;
+	position = 0;
+	while (++i < data->n_b)
+	{
+		if (data->stack_b[i] < data->stack_b[position])
+			position += i;
+	}
+	return (position);
+}
+
 static void	split_stack(void)
 {
 	t_data	*data;
@@ -54,7 +88,7 @@ static void	swap_sort_a(void)
 	data = get_data();
 	while (in_order(data->stack_a, data->n_a))
 	{
-		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
+		if (data->stack_a[0] > data->stack_a[1] && lowest_a() != 1)
 		{
 			swap_a();
 			r_rotate_a();
@@ -72,7 +106,7 @@ static void	swap_sort_b(void)
 	data = get_data();
 	while (in_order(data->stack_b, data->n_b))
 	{
-		if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
+		if (data->stack_b[0] > data->stack_b[1] && lowest_b() != 1)
 		{
 			swap_b();
 			r_rotate_b();
@@ -100,17 +134,17 @@ static void	merge_stack(void)
 
 void	list_moves(void)
 {
-	t_data	*data;
+	// t_data	*data;
 
-	data = get_data();
-	if (data->n_a <= 100)
-		swap_sort_a();
-	else
-	{
+	// data = get_data();
+	// if (data->n_a <= 100)
+		// swap_sort_a();
+	// else
+	// {
 		split_stack();
 		swap_sort_a();
 		swap_sort_b();
 		merge_stack();
-	}
+	// }
 	return ;
 }
