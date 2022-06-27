@@ -25,7 +25,7 @@ int	lowest_a(void)
 	while (++i < data->n_a)
 	{
 		if (data->stack_a[i] < data->stack_a[position])
-			position += i;
+			position = i;
 	}
 	return (position);
 }
@@ -43,7 +43,7 @@ int	lowest_b(void)
 	while (++i < data->n_b)
 	{
 		if (data->stack_b[i] < data->stack_b[position])
-			position += i;
+			position = i;
 	}
 	return (position);
 }
@@ -61,7 +61,7 @@ int	highest_a(void)
 	while (++i < data->n_a)
 	{
 		if (data->stack_a[i] > data->stack_a[position])
-			position += i;
+			position = i;
 	}
 	return (position);
 }
@@ -79,7 +79,7 @@ int	highest_b(void)
 	while (++i < data->n_b)
 	{
 		if (data->stack_b[i] > data->stack_b[position])
-			position += i;
+			position = i;
 	}
 	return (position);
 }
