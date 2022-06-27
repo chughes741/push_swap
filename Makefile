@@ -11,10 +11,12 @@ endif
 CC		=	gcc
 CFLAGS	=	-g -Wall -Werror -Wextra
 AFLAGS	=	-rs
+DEBUG	=	-D DEBUG
 RM		=	rm -rf
 
 # Dir and file names
 NAME	=	push_swap
+TEST	=	push_swap_test
 LIBFT	=	libftprintf.a
 LDIR	=	ft_printf/
 SRCDIR	=	src/
@@ -23,8 +25,8 @@ SRCS	=	$(wildcard $(SRCDIR)*.c) # Change to file names before sub
 OBJS = $(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 # Test arguments
-T_ARGS	= 	107	926	126	-75	-14	-12	-16	205	715	-46	\
-			929 527 966 136 -84 -32 -27 -66 959 165	\
+T_ARGS	= 	107 926 126 -75 -14 -12 -16 205 715 -46\
+			929 527 966 136 -84 -32 -27 -66 959 165\
 
 # Targets
 all: $(LDIR)/$(LIBFT) $(NAME)
@@ -48,7 +50,7 @@ clean:
 	$(HIDE)$(RM) $(LDIR)libft/*.o
 
 # Removes objects and executables
-fclean: # Add clean back before sub
+fclean: clean
 	$(HIDE)$(RM) *.dSYM
 	$(HIDE)$(RM) $(NAME)
 #	$(HIDE)$(RM) $(LDIR)$(LIBFT)
@@ -57,10 +59,11 @@ fclean: # Add clean back before sub
 # Removes objects and executables and remakes
 re: fclean all
 
-test: re
+test:
 	$(HIDE)clear
-	$(HIDE)./$(NAME) $(T_ARGS)
-	$(HIDE)make fclean
+	$(HIDE)$(CC) $(DEBUG) $(CFLAGS) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
+	$(HIDE)./$(TEST) $(T_ARGS)
+	$(HIDE)$(RM) $(TEST)
 
 val: re
 	$(HIDE)clear
