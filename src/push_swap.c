@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-// 100 ~7500
+
 int	main(int argc, char *argv[])
 {
 	t_data	*data;
@@ -23,5 +23,9 @@ int	main(int argc, char *argv[])
 	#ifndef DEBUG
 		printf("%s", data->moves);
 	#endif
+	free(data->args);
+	free(data->stack_a);
+	free(data->stack_b);
+	free(data->moves);
 	return (0);
 }
