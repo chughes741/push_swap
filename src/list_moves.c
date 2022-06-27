@@ -31,7 +31,6 @@ static void	split_stack(void)
 	int	i;
 	int	half_length;
 
-	print_stacks(); // TESTING
 	data = get_data();
 	i = 0;
 	half_length = data->n_a / 2;
@@ -40,14 +39,10 @@ static void	split_stack(void)
 		if (data->stack_a[0] < half_length)
 		{
 			push_b();
-			print_stacks(); // TESTING
 			i++;
 		}
 		else
-		{
 			rotate_a();
-			print_stacks(); // TESTING
-		}
 	}
 	return ;
 }
@@ -56,22 +51,16 @@ static void	swap_sort_a(void)
 {
 	t_data	*data;
 
-	print_stacks(); // TESTING
 	data = get_data();
 	while (in_order(data->stack_a, data->n_a))
 	{
 		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
 		{
 			swap_a();
-			print_stacks(); // TESTING
 			r_rotate_a();
-			print_stacks(); // TESTING
 		}
 		else
-		{
 			rotate_a();
-			print_stacks(); // TESTING
-		}
 	}
 	return ;
 }
@@ -86,15 +75,10 @@ static void	swap_sort_b(void)
 		if (data->stack_b[0] > data->stack_b[1] && data->stack_b[1])
 		{
 			swap_b();
-			print_stacks(); // TESTING
 			r_rotate_b();
-			print_stacks(); // TESTING
 		}
 		else
-		{
 			rotate_b();
-			print_stacks(); // TESTING
-		}
 	}
 	return ;
 }
@@ -109,9 +93,7 @@ static void	merge_stack(void)
 	while (--i)
 	{
 		r_rotate_b();
-		print_stacks(); // TESTING
 		push_a();
-		print_stacks(); // TESTING
 	}
 	return ;
 }
@@ -121,9 +103,14 @@ void	list_moves(void)
 	t_data	*data;
 
 	data = get_data();
-	split_stack();
-	swap_sort_a();
-	swap_sort_b();
-	merge_stack();
+	if (data->n_a <= 100)
+		swap_sort_a();
+	else
+	{
+		split_stack();
+		swap_sort_a();
+		swap_sort_b();
+		merge_stack();
+	}
 	return ;
 }
