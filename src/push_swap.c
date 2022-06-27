@@ -20,6 +20,8 @@ int	main(int argc, char *argv[])
 	set_up(argc, argv);
 	list_moves();
 	data = get_data();
-	printf("%s", data->moves);
+	#ifndef DEBUG
+		printf("%s", data->moves);
+	#endif
 	return (0);
 }
