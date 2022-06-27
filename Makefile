@@ -23,7 +23,8 @@ SRCS	=	$(wildcard $(SRCDIR)*.c) # Change to file names before sub
 OBJS = $(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 # Test arguments
-T_ARGS	= 1022747010 926662256 1126934241 -75584778 -1439434282 -1129143387 -1043716216 2073495929 1684766765 -1346397487
+T_ARGS	= 	107	926	126	-75	-14	-12	-16	205	715	-46	\
+			929 527 966 136 -84 -32 -27 -66 959 165	\
 
 # Targets
 all: $(LDIR)/$(LIBFT) $(NAME)
