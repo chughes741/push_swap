@@ -46,6 +46,12 @@ int		*parse_args(int argc, char **argv);
 void	hash_array(void);
 void	list_moves(void);
 
+bool	finished(void);
+int		lowest_a(void);
+int		lowest_b(void);
+int		highest_a(void);
+int		highest_b(void);
+
 int		ft_strcmp(const char *str1, const char *str2);
 char	*ft_str_prepend(char *s1, char *s2);
 
