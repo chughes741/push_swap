@@ -18,7 +18,8 @@ void	set_up(int argc, char **argv)
 
 	data = get_data();
 	data->args = parse_args(argc, argv);
-	data->n_a = argc - 1; // TODO inputs as single string
+	data->size = argc - 1;
+	data->n_a = data->size; // TODO inputs as single string
 	data->stack_a = ft_calloc(data->n_a, sizeof(int));
 	data->stack_b = ft_calloc(data->n_a, sizeof(int));
 	hash_array();

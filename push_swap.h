@@ -20,6 +20,7 @@
 
 typedef struct t_data {
 	int		*args;
+	int		size;
 	int		*stack_a;
 	int		*stack_b;
 	int		n_a;
