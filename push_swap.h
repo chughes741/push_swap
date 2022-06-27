@@ -16,6 +16,7 @@
 # include "ft_printf/ft_printf.h"
 # include <stdio.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct t_data {
 	int		*args;
@@ -28,14 +29,14 @@ typedef struct t_data {
 
 void	push_a(void);
 void	push_b(void);
-void	rotate_a(void);
-void	rotate_b(void);
+void	rotate_a(bool both);
+void	rotate_b(bool both);
 void	rotate_both(void);
-void	swap_a(void);
-void	swap_b(void);
+void	swap_a(bool both);
+void	swap_b(bool both);
 void	swap_both(void);
-void	r_rotate_a(void);
-void	r_rotate_b(void);
+void	r_rotate_a(bool both);
+void	r_rotate_b(bool both);
 void	r_rotate_both(void);
 
 void	input_check(int argc, char **argv);

@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Shift all elements down in stack_a, last becomes the first
-void	r_rotate_a(void)
+void	r_rotate_a(bool both)
 {
 	t_data	*data;
 	int		temp;
@@ -28,13 +28,14 @@ void	r_rotate_a(void)
 	while (--i)
 		data->stack_a[i] = data->stack_a[i - 1];
 	data->stack_a[0] = temp;
-	data->moves = ft_str_prepend(data->moves, "rra\n");
+	if (!both)
+		data->moves = ft_str_prepend(data->moves, "rra\n");
 	print_stacks(); // TESTING
 	return ;
 }
 
 // Shift all elements down in stack_b, last becomes the first
-void	r_rotate_b(void)
+void	r_rotate_b(bool both)
 {
 	t_data	*data;
 	int		temp;
@@ -49,7 +50,8 @@ void	r_rotate_b(void)
 	while (--i)
 		data->stack_b[i] = data->stack_b[i - 1];
 	data->stack_b[0] = temp;
-	data->moves = ft_str_prepend(data->moves, "rrb\n");
+	if (!both)
+		data->moves = ft_str_prepend(data->moves, "rrb\n");
 	print_stacks(); // TESTING
 	return ;
 }
@@ -57,9 +59,13 @@ void	r_rotate_b(void)
 // Shifts all elements down one in both stacks
 void	r_rotate_both(void)
 {
+	t_data	*data;
+
+	data = get_data();
 	print_stacks(); // TESTING
-	r_rotate_a();
-	r_rotate_b();
+	r_rotate_a(1);
+	r_rotate_b(1);
+	data->moves = ft_str_prepend(data->moves, "rrr\n");
 	print_stacks(); // TESTING
 	return ;
 }

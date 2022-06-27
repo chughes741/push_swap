@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 // Shift all elements up in stack_a, first becomes the last
-void	rotate_a(void)
+void	rotate_a(bool both)
 {
 	t_data	*data;
 	int	temp;
@@ -28,13 +28,14 @@ void	rotate_a(void)
 	while (++i < data->n_a - 1)
 		data->stack_a[i] = data->stack_a[i + 1];
 	data->stack_a[i] = temp;
-	data->moves = ft_str_prepend(data->moves, "ra\n");
+	if (!both)
+		data->moves = ft_str_prepend(data->moves, "ra\n");
 	print_stacks(); // TESTING
 	return ;
 }
 
 // Shift all elements up in stack_b, first becomes the last
-void	rotate_b(void)
+void	rotate_b(bool both)
 {
 	t_data	*data;
 	int	temp;
@@ -49,16 +50,21 @@ void	rotate_b(void)
 	while (++i < data->n_b - 1)
 		data->stack_b[i] = data->stack_b[i + 1];
 	data->stack_b[i] = temp;
-	data->moves = ft_str_prepend(data->moves, "rb\n");
+	if (!both)
+		data->moves = ft_str_prepend(data->moves, "rb\n");
 	print_stacks(); // TESTING
 	return ;
 }
 
 void	rotate_both(void)
 {
+	t_data	*data;
+
+	data = get_data();
 	print_stacks(); // TESTING
-	rotate_a();
-	rotate_b();
+	rotate_a(1);
+	rotate_b(1);
+	data->moves = ft_str_prepend(data->moves, "rr\n");
 	print_stacks(); // TESTING
 	return ;
 }
