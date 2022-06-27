@@ -19,6 +19,7 @@ void	push_a(void)
 	int		i;
 
 	data = get_data();
+	print_stacks(); // TESTING
 	if (data->n_b == 0)
 		return ;
 	if (data->n_a != 0)
@@ -34,6 +35,7 @@ void	push_a(void)
 	data->n_a += 1;
 	data->n_b -= 1;
 	data->moves = ft_str_prepend(data->moves, "pa\n");
+	print_stacks(); // TESTING
 	return ;	
 }
 
@@ -44,6 +46,7 @@ void	push_b(void)
 	int		i;
 
 	data = get_data();
+	print_stacks(); // TESTING
 	if (data->n_a == 0)
 		return ;
 	if (data->n_b != 0)
@@ -59,5 +62,6 @@ void	push_b(void)
 	data->n_a -= 1;
 	data->n_b += 1;
 	data->moves = ft_str_prepend(data->moves, "pb\n");
+	print_stacks(); // TESTING
 	return ;	
 }

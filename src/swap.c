@@ -19,12 +19,14 @@ void	swap_a(void)
 	int	temp;
 
 	data = get_data();
+	print_stacks(); // TESTING
 	if (data->n_a <= 1)
 		return ;
 	temp = data->stack_a[0];
 	data->stack_a[0] = data->stack_a[1];
 	data->stack_a[1] = temp;
 	data->moves = ft_str_prepend(data->moves, "sa\n");
+	print_stacks(); // TESTING
 	return ;
 }
 
@@ -35,19 +37,23 @@ void	swap_b(void)
 	int	temp;
 
 	data = get_data();
+	print_stacks(); // TESTING
 	if (data->n_b <= 1)
 		return ;
 	temp = data->stack_b[0];
 	data->stack_b[0] = data->stack_b[1];
 	data->stack_b[1] = temp;
 	data->moves = ft_str_prepend(data->moves, "sb\n");
+	print_stacks(); // TESTING
 	return ;
 }
 
 // Swaps both stacks top two elements
 void	swap_both(void)
 {
+	print_stacks(); // TESTING
 	swap_a();
 	swap_b();
+	print_stacks(); // TESTING
 	return ;
 }
