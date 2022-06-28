@@ -9,7 +9,7 @@ endif
 
 # Compiler and flags
 CC		=	gcc
-CFLAGS	=	-g -Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra
 AFLAGS	=	-rs
 DEBUG	=	-D DEBUG
 RM		=	rm -rf
@@ -52,6 +52,7 @@ clean:
 # Removes objects and executables
 fclean: clean
 	$(HIDE)$(RM) $(NAME)
+	$(HIDE)$(RM) *.dSYM
 #	$(HIDE)$(RM) $(LDIR)$(LIBFT)
 #	$(HIDE)$(RM) $(LDIR)libft/libft.a
 
