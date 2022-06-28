@@ -63,9 +63,9 @@ test:
 	$(HIDE)clear
 	$(HIDE)$(CC) $(DEBUG) $(CFLAGS) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
 	$(HIDE)./$(TEST) $(T_ARGS)
-	$(HIDE)$(RM) $(TEST)
+#	$(HIDE)$(RM) $(TEST)
 
-val: re
+leak: re
 	$(HIDE)clear
 	$(HIDE)valgrind				\
 		--leak-check=full		\
@@ -74,3 +74,9 @@ val: re
 		--read-var-info=yes		\
 		--read-inline-info=yes	\
 		./$(NAME) $(T_ARGS)
+
+time: re
+	$(HIDE)clear
+	$(HIDE)valgrind				\
+	--tool=callgrind			\
+	$(NAME) $(T_ARGS)
