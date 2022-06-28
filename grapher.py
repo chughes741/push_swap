@@ -5,9 +5,9 @@ import matplotlib.pyplot as plot
 
 
 x = [0,10,50,100,150,200,250,300,350,400,450,500]
-y = []
+y = [0]
 
-with open ('./push_swap_tester/results.txt', 'r') as f:
+with open ('./results.txt', 'r') as f:
     while True:
         temp = ""
         line = f.readline()

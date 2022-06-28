@@ -3,7 +3,7 @@
 temp_log=$(mktemp)
 RESULTS="results.txt"
 
-COUNT=100
+COUNT=1
 SETS=( 10 50 100 150 200 250 300 350 400 450 500)
 
 rm $RESULTS
@@ -17,3 +17,5 @@ do
 done
 
 rm ${temp_log}
+
+python3 grapher.py
