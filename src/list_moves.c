@@ -22,7 +22,12 @@ void	insertion_sort(void)
 		while (lowest_a() != 0)
 		{
 			if (highest_a() != 0)
-				rotate_a(0);
+			{
+				if (lowest_a() < data->n_a / 2)
+					rotate_a(0);
+				else
+					r_rotate_a(0);
+			}
 			else
 			{
 				push_b();
