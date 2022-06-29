@@ -11,7 +11,7 @@ endif
 CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
 AFLAGS	=	-rs
-DEBUG	=	-D DEBUG
+DEBUG	=	-g -D DEBUG
 RM		=	rm -rf
 
 # Dir and file names
@@ -59,13 +59,15 @@ fclean: clean
 # Removes objects and executables and remakes
 re: fclean all
 
-test:
-	$(HIDE)clear
+$(TEST):
 	$(HIDE)$(CC) $(DEBUG) $(CFLAGS) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
-	$(HIDE)./$(TEST) $(T_ARGS)
-#	$(HIDE)$(RM) $(TEST)
 
-leak: re
+test: $(TEST)
+	$(HIDE)clear
+	$(HIDE)./$(TEST) $(T_ARGS)
+	$(HIDE)$(RM) $(TEST)
+
+leak: $(TEST)
 	$(HIDE)clear
 	$(HIDE)valgrind				\
 		--leak-check=full		\
@@ -73,10 +75,8 @@ leak: re
 		--show-leak-kinds=all	\
 		--read-var-info=yes		\
 		--read-inline-info=yes	\
-		./$(NAME) $(T_ARGS)
+		./$(TEST) $(T_ARGS)
 
-time: re
+time: $(TEST)
 	$(HIDE)clear
-	$(HIDE)valgrind				\
-	--tool=callgrind			\
-	$(NAME) $(T_ARGS)
+	$(HIDE)valgrind --tool=callgrind $(TEST) $(T_ARGS)
