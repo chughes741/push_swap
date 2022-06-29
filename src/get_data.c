@@ -12,6 +12,7 @@
 
 #include "../push_swap.h"
 
+// Singleton itialization and reference getter
 t_data	*get_data(void)
 {
 	static t_data* data = NULL;
