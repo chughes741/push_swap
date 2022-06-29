@@ -18,7 +18,7 @@
 # include <limits.h>
 # include <stdbool.h>
 
-typedef struct s_data {
+typedef struct t_data {
 	int		*args;
 	int		size;
 	int		*stack_a;
