@@ -9,13 +9,15 @@ endif
 
 # Compiler and flags
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra
 AFLAGS	=	-rs
-DEBUG	=	-g -D DEBUG
+CFLAGS	=	-Wall -Werror -Wextra
+DFLAG	=	-D DEBUG -Wall -Werror -Wextra
+TFLAG	=	-g -Wall -Werror -Wextra
 RM		=	rm -rf
 
 # Dir and file names
 NAME	=	push_swap
+DEBUG	=	push_swap_debug
 TEST	=	push_swap_test
 LIBFT	=	libftprintf.a
 LDIR	=	ft_printf/
@@ -52,6 +54,7 @@ clean:
 # Removes objects and executables
 fclean: clean
 	$(HIDE)$(RM) $(TEST)
+	$(HIDE)$(RM) $(DEBUG)
 	$(HIDE)$(RM) $(NAME)
 	$(HIDE)$(RM) *.dSYM
 #	$(HIDE)$(RM) $(LDIR)$(LIBFT)
@@ -60,13 +63,16 @@ fclean: clean
 # Removes objects and executables and remakes
 re: fclean all
 
-$(TEST):
-	$(HIDE)$(CC) $(DEBUG) $(CFLAGS) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
 
-test: $(TEST)
-	$(HIDE)clear
-	$(HIDE)./$(TEST) $(T_ARGS)
-	$(HIDE)$(RM) $(TEST)
+$(DEBUG):
+	$(HIDE)$(CC) $(DFLAG) -o $(DEBUG) $(SRCS) $(LDIR)$(LIBFT)
+
+debug: $(DEBUG)
+	$(HIDE)./$(DEBUG) $(T_ARGS)
+
+
+$(TEST):
+	$(HIDE)$(CC) $(TFLAG) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
 
 leak: $(TEST)
 	$(HIDE)clear

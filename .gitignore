@@ -47,6 +47,7 @@ push_swap
 *.idb
 *.pdb
 *_test
+*_debug
 
 # Kernel Module Compile Results
 *.mod*
