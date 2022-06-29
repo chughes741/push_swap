@@ -25,7 +25,6 @@ typedef struct s_data {
 	int		*stack_b;
 	int		n_a;
 	int		n_b;
-	char	*moves;
 }			t_data;
 
 void	push_a(void);

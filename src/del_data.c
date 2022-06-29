@@ -11,7 +11,6 @@ void	del_data(void)
 	free(data->args);
 	free(data->stack_a);
 	free(data->stack_b);
-	free(data->moves);
 	free(data);
 	return ;
 }

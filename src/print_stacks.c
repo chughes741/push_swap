@@ -20,7 +20,6 @@ void	print_stacks(void) {
 			else
 				printf(" -  \n");
 		}
-		printf("\n");
 	#endif
 	return;
 }

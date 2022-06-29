@@ -14,16 +14,9 @@
 
 int	main(int argc, char *argv[])
 {
-	t_data	*data;
-
 	input_check(argc, argv); // TODO sort out input check
 	set_up(argc, argv);
 	list_moves();
-	data = get_data();
-	#ifndef DEBUG
-		printf("%s", data->moves);
-	#endif
-	data->n_b = 0; // Avoids unused var Werror 
 	del_data();
 	return (0);
 }

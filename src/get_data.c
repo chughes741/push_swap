@@ -18,9 +18,6 @@ t_data	*get_data(void)
 	static t_data* data = NULL;
 
 	if (data == NULL)
-	{
 		data = ft_calloc(1, sizeof(t_data));
-		data->moves = ft_calloc(1, sizeof(char));
-	}
 	return (data);
 }
