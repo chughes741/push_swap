@@ -51,6 +51,7 @@ clean:
 
 # Removes objects and executables
 fclean: clean
+	$(HIDE)$(RM) $(TEST)
 	$(HIDE)$(RM) $(NAME)
 	$(HIDE)$(RM) *.dSYM
 #	$(HIDE)$(RM) $(LDIR)$(LIBFT)
