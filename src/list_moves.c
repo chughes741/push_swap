@@ -44,6 +44,9 @@ void	insertion_sort(void)
 }
 
 
+
+
+
 void	list_moves(void)
 {
 	insertion_sort();

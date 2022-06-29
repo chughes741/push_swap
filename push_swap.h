@@ -19,13 +19,15 @@
 # include <stdbool.h>
 
 typedef struct t_data {
-	int		*args;
-	int		size;
-	int		*stack_a;
-	int		*stack_b;
-	int		n_a;
-	int		n_b;
-}			t_data;
+	int	*args;
+	int	size;
+	int	*stack_a;
+	int	top_a;
+	int	n_a;
+	int	*stack_b;
+	int	top_b;
+	int	n_b;
+}		t_data;
 
 void	push_a(void);
 void	push_b(void);
