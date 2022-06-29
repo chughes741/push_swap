@@ -1,6 +1,7 @@
 
 #include "../push_swap.h"
 
+// DEBUG function to print contents of stacks
 void	print_stacks(void) {
 	#ifdef DEBUG
 		t_data *data = get_data();
