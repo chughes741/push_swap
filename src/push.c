@@ -34,8 +34,8 @@ void	push_a(void)
 		data->stack_b[i] = data->stack_b[i + 1];
 	data->n_a += 1;
 	data->n_b -= 1;
-	data->moves = ft_str_prepend(data->moves, "pa\n");
 	print_stacks(); // TESTING
+	printf("pa\n");
 	return ;	
 }
 
@@ -61,7 +61,7 @@ void	push_b(void)
 		data->stack_a[i] = data->stack_a[i + 1];
 	data->n_a -= 1;
 	data->n_b += 1;
-	data->moves = ft_str_prepend(data->moves, "pb\n");
 	print_stacks(); // TESTING
+	printf("pb\n");
 	return ;	
 }

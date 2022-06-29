@@ -25,9 +25,9 @@ void	swap_a(bool both)
 	temp = data->stack_a[0];
 	data->stack_a[0] = data->stack_a[1];
 	data->stack_a[1] = temp;
-	if (!both)
-		data->moves = ft_str_prepend(data->moves, "sa\n");
 	print_stacks(); // TESTING
+	if (!both)
+		printf("sa\n");
 	return ;
 }
 
@@ -44,9 +44,9 @@ void	swap_b(bool both)
 	temp = data->stack_b[0];
 	data->stack_b[0] = data->stack_b[1];
 	data->stack_b[1] = temp;
-	if (!both)
-		data->moves = ft_str_prepend(data->moves, "sb\n");
 	print_stacks(); // TESTING
+	if (!both)
+		printf("sb\n");
 	return ;
 }
 
@@ -59,7 +59,7 @@ void	swap_both(void)
 	print_stacks(); // TESTING
 	swap_a(1);
 	swap_b(1);
-	data->moves = ft_str_prepend(data->moves, "ss\n");
 	print_stacks(); // TESTING
+	printf("ss\n");
 	return ;
 }

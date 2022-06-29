@@ -28,9 +28,9 @@ void	rotate_a(bool both)
 	while (++i < data->n_a - 1)
 		data->stack_a[i] = data->stack_a[i + 1];
 	data->stack_a[i] = temp;
-	if (!both)
-		data->moves = ft_str_prepend(data->moves, "ra\n");
 	print_stacks(); // TESTING
+	if (!both)
+		printf("ra\n");
 	return ;
 }
 
@@ -50,9 +50,9 @@ void	rotate_b(bool both)
 	while (++i < data->n_b - 1)
 		data->stack_b[i] = data->stack_b[i + 1];
 	data->stack_b[i] = temp;
-	if (!both)
-		data->moves = ft_str_prepend(data->moves, "rb\n");
 	print_stacks(); // TESTING
+	if (!both)
+		printf("rb\n");
 	return ;
 }
 
@@ -64,7 +64,7 @@ void	rotate_both(void)
 	print_stacks(); // TESTING
 	rotate_a(1);
 	rotate_b(1);
-	data->moves = ft_str_prepend(data->moves, "rr\n");
 	print_stacks(); // TESTING
+	printf("rr\n");
 	return ;
 }
