@@ -8,15 +8,10 @@ void	del_data(void)
 	t_data	*data;
 
 	data = get_data();
-	if (data->args)
-		free(data->args);
-	if (data->stack_a)
-		free(data->stack_a);
-	if (data->stack_b)
-		free(data->stack_b);
-	if (data->moves)
-		free(data->moves);
-	if (data)
-		free(data);
+	free(data->args);
+	free(data->stack_a);
+	free(data->stack_b);
+	free(data->moves);
+	free(data);
 	return ;
 }
