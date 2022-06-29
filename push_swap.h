@@ -18,7 +18,7 @@
 # include <limits.h>
 # include <stdbool.h>
 
-typedef struct t_data {
+typedef struct s_data {
 	int		*args;
 	int		size;
 	int		*stack_a;
@@ -46,6 +46,8 @@ t_data	*get_data(void);
 int		*parse_args(int argc, char **argv);
 void	hash_array(void);
 void	list_moves(void);
+void	del_data(void);
+
 
 bool	finished(void);
 int		lowest_a(void);
@@ -56,6 +58,7 @@ int		highest_b(void);
 int		ft_strcmp(const char *str1, const char *str2);
 char	*ft_str_prepend(char *s1, char *s2);
 
+// DEBUG and testing
 void	print_stacks(void); // TODO rmv bf submission
 
 #endif

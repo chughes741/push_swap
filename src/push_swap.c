@@ -23,9 +23,6 @@ int	main(int argc, char *argv[])
 	#ifndef DEBUG
 		printf("%s", data->moves);
 	#endif
-	free(data->args);
-	free(data->stack_a);
-	free(data->stack_b);
-	free(data->moves);
+	del_data();
 	return (0);
 }
