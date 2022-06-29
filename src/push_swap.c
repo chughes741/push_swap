@@ -23,6 +23,7 @@ int	main(int argc, char *argv[])
 	#ifndef DEBUG
 		printf("%s", data->moves);
 	#endif
+	data->n_b = 0; // Avoids unused var Werror 
 	del_data();
 	return (0);
 }
