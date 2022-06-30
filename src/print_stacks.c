@@ -1,12 +1,13 @@
 
 #include "../push_swap.h"
+#include <unistd.h>
 
 // DEBUG function to print contents of stacks
 void	print_stacks(void) {
 	#ifdef DEBUG
 		t_data *data = get_data();
 
-		sleep(1);
+		usleep(200000);
 		printf("\e[1;1H\e[2J");
 		printf("  A | B  \n");
 		printf("---------\n");
