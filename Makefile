@@ -87,3 +87,5 @@ leak: $(TEST)
 time: $(TEST)
 	$(HIDE)clear
 	$(HIDE)valgrind --tool=callgrind $(TEST) $(T_ARGS)
+
+# Test
