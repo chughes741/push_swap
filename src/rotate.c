@@ -66,7 +66,7 @@ void	rotate_a(bool both)
 	if (data->n_a <= 1)
 		return ;
 	data->top_a += 1;
-	if (data->top_a == data->n_a)
+	if (data->top_a >= data->n_a)
 		data->top_a = 0;
 	print_stacks(); // ! DEBUG
 	if (!both)
@@ -84,7 +84,7 @@ void	rotate_b(bool both)
 	if (data->n_b <= 1)
 		return ;
 	data->top_b += 1;
-	if (data->top_b == data->n_b)
+	if (data->top_b >= data->n_b)
 		data->top_b = 0;
 	print_stacks(); // ! DEBUG
 	if (!both)
