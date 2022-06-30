@@ -16,9 +16,27 @@ void	print_stacks(void) {
 			else
 				printf("  - |");
 			if (i < data->n_b)
-				printf(" %-2i \n", data->stack_b[i]);
+			{
+				if (i == data->top_a && i == data->top_b)
+					printf(" %-2i <-a <-b\n", data->stack_b[i]);
+				else if (i == data->top_a)
+					printf(" %-2i <-a\n", data->stack_b[i]);
+				else if (i == data->top_b)
+					printf(" %-2i <-b\n", data->stack_b[i]);
+				else
+					printf(" %-2i \n", data->stack_b[i]);
+			}
 			else
-				printf(" -  \n");
+			{
+				if (i == data->top_a && i == data->top_b)
+					printf(" -  <-a <-b\n");
+				else if (i == data->top_a)
+					printf(" -  <-a\n");
+				else if (i == data->top_b)
+					printf(" -  <-b\n");
+				else
+					printf(" -  \n");
+			}
 		}
 	#endif
 	return;
