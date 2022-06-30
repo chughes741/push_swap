@@ -29,6 +29,7 @@ typedef struct t_data {
 	int	n_b;
 }		t_data;
 
+// Movements for the int array
 void	push_a(void);
 void	push_b(void);
 void	rotate_a(bool both);
@@ -41,23 +42,24 @@ void	r_rotate_a(bool both);
 void	r_rotate_b(bool both);
 void	r_rotate_both(void);
 
+// Setup and background infrastructure
 void	input_check(int argc, char **argv);
-void	set_up(int argc, char **argv);
 t_data	*get_data(void);
+void	set_up(int argc, char **argv);
 int		*parse_args(int argc, char **argv);
 void	hash_array(void);
 void	list_moves(void);
 void	del_data(void);
 
-
+// Sorting tools
 bool	finished(void);
 int		lowest_a(void);
 int		lowest_b(void);
 int		highest_a(void);
 int		highest_b(void);
 
+// String tools
 int		ft_strcmp(const char *str1, const char *str2);
-char	*ft_str_prepend(char *s1, char *s2);
 
 // DEBUG and testing
 void	print_stacks(void); // TODO rmv bf submission

@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	insertion_sort(void)
+void	list_moves(void)
 {
 	t_data	*data;
 
@@ -40,11 +40,5 @@ void	insertion_sort(void)
 		r_rotate_b(0);
 	while (data->n_b)
 		push_a();
-	return ;
-}
-
-void	list_moves(void)
-{
-	insertion_sort();
 	return ;
 }
