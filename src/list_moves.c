@@ -56,7 +56,7 @@ void	insert_to_a(void)
 		while (data->stack_a[data->n_a - 1] > data->stack_b[0])
 			r_rotate_a(false);
 		push_a();
-		while (data->stack_a[0])
+		while (data->stack_a[0] && data->stack_a[0] < data->stack_b[0])
 			rotate_a(false);
 	}
 }
@@ -98,7 +98,7 @@ void	list_moves(void)
 	t_data	*data;
 
 	data = get_data();
-	while (data->chunk > 5)
+	while (data->chunk > 25)
 		quick_to_b();
 	swap_sort_a();
 	insert_to_a();
