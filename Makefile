@@ -12,7 +12,7 @@ CC		=	gcc
 AFLAGS	=	-rs
 CFLAGS	=	-Wall -Werror -Wextra
 DFLAG	=	-D DEBUG -Wall -Werror -Wextra
-TFLAG	=	-g -Wall -Werror -Wextra
+TFLAG	=	-pg -g -Wall -Werror -Wextra
 RM		=	rm -rf
 
 # Dir and file names
@@ -57,6 +57,7 @@ fclean: clean
 	$(HIDE)$(RM) $(DEBUG)
 	$(HIDE)$(RM) $(NAME)
 	$(HIDE)$(RM) *.dSYM
+	$(HIDE)$(RM) *.out
 #	$(HIDE)$(RM) $(LDIR)$(LIBFT)
 #	$(HIDE)$(RM) $(LDIR)libft/libft.a
 
@@ -86,4 +87,7 @@ leak: $(TEST)
 
 time: $(TEST)
 	$(HIDE)clear
-	$(HIDE)valgrind --tool=callgrind $(TEST) $(T_ARGS)
+	$(HIDE)./$(TEST)
+	$(HIDE)gprof -b -p $(TEST) gmon.out
+	$(MAKE) fclean
+
