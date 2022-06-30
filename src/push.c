@@ -15,6 +15,7 @@
 // Pop top_b element and insert at top_a
 void	push_a(void)
 {
+	print_stacks(); // ! DEBUG
 	t_data	*data;
 	int		i;
 
@@ -30,6 +31,7 @@ void	push_a(void)
 		data->stack_b[i - 1] = data->stack_b[i];
 	data->n_a += 1;
 	data->n_b -= 1;
+	print_stacks(); // ! DEBUG
 	printf("pa\n");
 	return ;
 }
@@ -37,6 +39,7 @@ void	push_a(void)
 // Pop top_a element and insert at top_b
 void	push_b(void)
 {
+	print_stacks(); // ! DEBUG
 	t_data	*data;
 	int		i;
 
@@ -52,6 +55,7 @@ void	push_b(void)
 		data->stack_a[i - 1] = data->stack_a[i];
 	data->n_b += 1;
 	data->n_a -= 1;
+	print_stacks(); // ! DEBUG
 	printf("pb\n");
 	return ;
 }

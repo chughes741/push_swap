@@ -23,10 +23,10 @@ void	insertion_sort(void)
 		{
 			if (highest_a() != data->top_a)
 			{
-				if (lowest_a() < data->n_a / 2)
+				// if (lowest_a() < data->n_a / 2)
 					rotate_a(0);
-				else
-					r_rotate_a(0);
+				// else
+					// r_rotate_a(0);
 			}
 			else
 			{
@@ -44,7 +44,10 @@ void	insertion_sort(void)
 }
 
 
-
+// void	swap_sort(void)
+// {
+	// 
+// }
 
 
 void	list_moves(void)

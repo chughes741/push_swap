@@ -53,6 +53,7 @@
 // Swaps element pointed to by top_a with the next one
 void	swap_a(bool both)
 {
+	print_stacks(); // ! DEBUG
 	t_data	*data;
 	int		temp;
 
@@ -70,6 +71,7 @@ void	swap_a(bool both)
 		data->stack_a[data->top_a] = data->stack_a[0];
 		data->stack_a[0] = temp;
 	}
+	print_stacks(); // ! DEBUG
 	if (!both)
 		printf("sa\n");
 	return ;
@@ -78,6 +80,7 @@ void	swap_a(bool both)
 // Swaps element pointed to by top_a with the next one
 void	swap_b(bool both)
 {
+	print_stacks(); // ! DEBUG
 	t_data	*data;
 	int		temp;
 
@@ -95,6 +98,7 @@ void	swap_b(bool both)
 		data->stack_b[data->top_b] = data->stack_b[0];
 		data->stack_b[0] = temp;
 	}
+	print_stacks(); // ! DEBUG
 	if (!both)
 		printf("sb\n");
 	return ;

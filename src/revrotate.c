@@ -59,6 +59,7 @@
 // Shift top_a pointer up one
 void	r_rotate_a(bool both)
 {
+	print_stacks(); // ! DEBUG
 	t_data	*data;
 
 	data = get_data();
@@ -67,6 +68,7 @@ void	r_rotate_a(bool both)
 	if (data->top_a == 0)
 		data->top_a = data->n_a;
 	data->top_a -= 1;
+	print_stacks(); // ! DEBUG
 	if (!both)
 		printf("rra\n");
 	return ;
@@ -75,6 +77,7 @@ void	r_rotate_a(bool both)
 // Shift top_a pointer up one
 void	r_rotate_b(bool both)
 {
+	print_stacks(); // ! DEBUG
 	t_data	*data;
 
 	data = get_data();
@@ -83,6 +86,7 @@ void	r_rotate_b(bool both)
 	if (data->top_b == 0)
 		data->top_b = data->n_b;
 	data->top_b -= 1;
+	print_stacks(); // ! DEBUG
 	if (!both)
 		printf("rrb\n");
 	return ;
