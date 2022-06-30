@@ -64,14 +64,14 @@ fclean: clean
 re: fclean all
 
 
-$(DEBUG):
+$(DEBUG): fclean
 	$(HIDE)$(CC) $(DFLAG) -o $(DEBUG) $(SRCS) $(LDIR)$(LIBFT)
 
 debug: $(DEBUG)
 	$(HIDE)./$(DEBUG) $(T_ARGS)
 
 
-$(TEST):
+$(TEST): fclean
 	$(HIDE)$(CC) $(TFLAG) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
 
 leak: $(TEST)
