@@ -28,7 +28,7 @@ OBJS = $(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 # Test arguments
 T_ARGS	= 	107 926 126 -75 -14 -12 -16 205 715 -46\
-			929 527 966 136 -84 -32 -27 -66 959 165\
+			929 527 966 136 -84 -32 -27 -66 959 165
 
 # Targets
 all: $(LDIR)/$(LIBFT) $(NAME)

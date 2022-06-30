@@ -19,14 +19,14 @@ void	insertion_sort(void)
 	data = get_data();
 	while (data->n_a)
 	{
-		while (lowest_a() != data->top_a)
+		while (lowest_a() != 0)
 		{
-			if (highest_a() != data->top_a)
+			if (highest_a() != 0)
 			{
-				// if (lowest_a() < data->n_a / 2)
+				if (lowest_a() < data->n_a / 2)
 					rotate_a(0);
-				// else
-					// r_rotate_a(0);
+				else
+					r_rotate_a(0);
 			}
 			else
 			{
@@ -36,19 +36,12 @@ void	insertion_sort(void)
 		}
 		push_b();
 	}
-	while (highest_b() != data->top_b)
+	while (highest_b() != 0)
 		r_rotate_b(0);
 	while (data->n_b)
 		push_a();
 	return ;
 }
-
-
-// void	swap_sort(void)
-// {
-	// 
-// }
-
 
 void	list_moves(void)
 {
