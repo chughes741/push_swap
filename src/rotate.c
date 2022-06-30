@@ -90,9 +90,9 @@ void	rotate_b(bool both)
 
 void	rotate_both(void)
 {
-	t_data	*data;
+	// t_data	*data;
 
-	data = get_data();
+	// data = get_data();
 	// print_stacks(); // TESTING
 	rotate_a(1);
 	rotate_b(1);

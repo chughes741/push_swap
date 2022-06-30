@@ -91,9 +91,9 @@ void	r_rotate_b(bool both)
 // Shifts all elements down one in both stacks
 void	r_rotate_both(void)
 {
-	t_data	*data;
+	// t_data	*data;
 
-	data = get_data();
+	// data = get_data();
 	// print_stacks(); // TESTING
 	r_rotate_a(1);
 	r_rotate_b(1);

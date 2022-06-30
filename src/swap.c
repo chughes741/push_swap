@@ -103,9 +103,9 @@ void	swap_b(bool both)
 // Swaps both stacks top two elements
 void	swap_both(void)
 {
-	t_data	*data;
+	// t_data	*data;
 
-	data = get_data();
+	// data = get_data();
 	// print_stacks(); // TESTING
 	swap_a(1);
 	swap_b(1);
