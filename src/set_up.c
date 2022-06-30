@@ -20,6 +20,7 @@ void	set_up(int argc, char **argv)
 	data->args = parse_args(argc, argv);
 	data->size = argc - 1;
 	data->n_a = data->size; // TODO inputs as single string
+	data->chunk = data->size;
 	data->stack_a = ft_calloc(data->n_a, sizeof(int));
 	data->stack_b = ft_calloc(data->n_a, sizeof(int));
 	hash_array();

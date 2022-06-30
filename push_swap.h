@@ -21,6 +21,7 @@
 typedef struct t_data {
 	int	*args;
 	int	size;
+	int	chunk;
 	int	*stack_a;
 	int	top_a;
 	int	n_a;
