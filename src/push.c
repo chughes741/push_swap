@@ -22,7 +22,7 @@ void	push_a(void)
 	data = get_data();
 	if (data->n_b == 0)
 		return ;
-	i = data->n_a;
+	i = data->n_a + 1;
 	while (--i > data->top_a)
 		data->stack_a[i] = data->stack_a[i - 1];
 	data->stack_a[data->top_a] = data->stack_b[data->top_b];
@@ -46,7 +46,7 @@ void	push_b(void)
 	data = get_data();
 	if (data->n_a == 0)
 		return ;
-	i = data->n_b;
+	i = data->n_b + 1;
 	while (--i > data->top_b)
 		data->stack_b[i] = data->stack_b[i - 1];
 	data->stack_b[data->top_b] = data->stack_a[data->top_a];
