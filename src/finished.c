@@ -22,7 +22,7 @@ bool	finished(void)
 	n = 0;
 	while (++n < data->n_a)
 	{
-		if (data->stack_a[n] <= data->stack_b[n - 1])
+		if (data->stack_a[n] <= data->stack_a[n - 1])
 			return (false);
 	}
 	return (true);
