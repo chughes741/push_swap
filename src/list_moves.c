@@ -12,8 +12,58 @@
 
 #include "../push_swap.h"
 
-void	list_moves(void)
+void	quick_to_b(void)
 {
+	t_data	*data;
+	int		i;
+
+	data = get_data();
+	i = 0;
+	data->chunk /= 2;
+	while (i < data->chunk)
+	{
+		if (data->stack_a[0] >= data->chunk)
+		{
+			push_b();
+			i++;
+		}
+		else
+			rotate_a(false);
+	}
+}
+
+void	swap_sort_a(void)
+{
+	t_data	*data;
+
+	data = get_data();
+	while(!finished())
+	{
+		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
+			swap_a(0);
+		else
+			rotate_a(0);
+	}
+}
+
+void	insert_to_a(void)
+{
+	t_data	*data;
+
+	data = get_data();
+	while (data->n_b)
+	{
+		while (data->stack_a[data->n_a - 1] > data->stack_b[0])
+			r_rotate_a(false);
+		push_a();
+		while (data->stack_a[0])
+			rotate_a(false);
+	}
+}
+
+void	insert_sort(void)
+{
+	return ; // ! TESTING
 	t_data	*data;
 
 	data = get_data();
@@ -40,5 +90,20 @@ void	list_moves(void)
 		r_rotate_b(0);
 	while (data->n_b)
 		push_a();
+	return ;
+}
+
+void	list_moves(void)
+{
+	t_data	*data;
+
+	data = get_data();
+	while (data->chunk > 5)
+		quick_to_b();
+	swap_sort_a();
+	insert_to_a();
+	while (data->stack_a[0])
+		rotate_a(false);
+	insert_sort();
 	return ;
 }
