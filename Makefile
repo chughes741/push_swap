@@ -12,7 +12,7 @@ CC		=	gcc
 AFLAGS	=	-rs
 CFLAGS	=	-Wall -Werror -Wextra
 DFLAG	=	-D DEBUG -Wall -Werror -Wextra
-TFLAG	=	-pg -g -Wall -Werror -Wextra
+TFLAG	=	-pg -Wall -Werror -Wextra
 RM		=	rm -rf
 
 # Dir and file names
