@@ -40,9 +40,9 @@ void	swap_sort_a(void)
 	while(!finished())
 	{
 		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
-			swap_a(0);
+			swap_a(false);
 		else
-			rotate_a(0);
+			rotate_a(false);
 	}
 }
 
