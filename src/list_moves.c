@@ -72,6 +72,5 @@ void	list_moves(void)
 	insert_to_a();
 	while (data->stack_a[0])
 		rotate_a(false);
-	insert_sort();
 	return ;
 }
