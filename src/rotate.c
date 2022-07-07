@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 // Shift all elements up in stack_a, first becomes the last
 void	rotate_a(bool both)
