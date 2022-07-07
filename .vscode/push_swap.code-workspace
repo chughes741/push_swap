@@ -12,7 +12,8 @@
 		"editor.bracketPairColorization.enabled": false,
 		"files.associations": {
 			"limits.h": "c"
-		}
+		},
+		"editor.fontFamily": "MesloLGS, Menlo, Monaco, 'Courier New', monospace"
 	},
 	"launch": {
 		"version": "0.2.0",
