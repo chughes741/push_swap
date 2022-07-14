@@ -1,6 +1,6 @@
 
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 // Deallocates data and all memory its members point to
 void	del_data(void)

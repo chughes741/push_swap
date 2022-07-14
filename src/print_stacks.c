@@ -1,6 +1,6 @@
 
-#include "../push_swap.h"
-#include <unistd.h>
+#include "../include/push_swap.h"
+
 
 // DEBUG function to print contents of stacks
 void	print_stacks(void) {

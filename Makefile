@@ -9,7 +9,6 @@ endif
 
 # Compiler and flags
 CC		=	gcc
-AFLAGS	=	-rs
 CFLAGS	=	-Wall -Werror -Wextra
 DFLAG	=	-D DEBUG -Wall -Werror -Wextra
 TFLAG	=	-pg -Wall -Werror -Wextra
@@ -19,12 +18,12 @@ RM		=	rm -rf
 NAME	=	push_swap
 DEBUG	=	push_swap_debug
 TEST	=	push_swap_test
-LIBFT	=	libftprintf.a
-LDIR	=	ft_printf/
+LIBFT	=	libft.a
+LDIR	=	libft/
 SRCDIR	=	src/
 OBJDIR	=	bin/
 SRCS	=	$(wildcard $(SRCDIR)*.c) # Change to file names before sub
-OBJS = $(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
+OBJS	=	$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 # Test arguments
 T_ARGS	= 	107 926 126 -75 -14 -12 -16 205 715 -46\
@@ -42,14 +41,9 @@ $(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c
 $(LDIR)/$(LIBFT):
 	$(HIDE)$(MAKE) -C $(LDIR)
 
-# Compiles bonus program: checker
-bonus: all
-
 # Removes objects
 clean:
 	$(HIDE)$(RM) $(OBJS)
-	$(HIDE)$(RM) $(LDIR)*.o
-	$(HIDE)$(RM) $(LDIR)libft/*.o
 
 # Removes objects and executables
 fclean: clean
@@ -58,13 +52,12 @@ fclean: clean
 	$(HIDE)$(RM) $(NAME)
 	$(HIDE)$(RM) *.dSYM
 	$(HIDE)$(RM) *.out
-#	$(HIDE)$(RM) $(LDIR)$(LIBFT)
-#	$(HIDE)$(RM) $(LDIR)libft/libft.a
 
 # Removes objects and executables and remakes
 re: fclean all
 
 
+# Runs with debugging code active
 $(DEBUG): fclean
 	$(HIDE)$(CC) $(DFLAG) -o $(DEBUG) $(SRCS) $(LDIR)$(LIBFT)
 
@@ -72,6 +65,7 @@ debug: $(DEBUG)
 	$(HIDE)./$(DEBUG) $(T_ARGS)
 
 
+# Generates test file to time program and leak check
 $(TEST): fclean
 	$(HIDE)$(CC) $(TFLAG) -o $(TEST) $(SRCS) $(LDIR)$(LIBFT)
 
@@ -87,7 +81,7 @@ leak: $(TEST)
 
 time: $(TEST)
 	$(HIDE)clear
-	$(HIDE)./$(TEST)
+	$(HIDE)./$(TEST) $(T_ARGS)
 	$(HIDE)gprof -b -p $(TEST) gmon.out
 	$(MAKE) fclean
 
