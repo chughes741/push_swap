@@ -12,10 +12,10 @@
 
 #include "../push_swap.h"
 
-int	*parse_args(int argc, char **argv)
+array	parse_args(int argc, char **argv)
 {
-	int	*unsorted_set;
-	int	i;
+	array	unsorted_set;
+	int		i;
 
 	i = -1;
 	unsorted_set = ft_calloc(argc, sizeof(int));
