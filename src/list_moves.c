@@ -16,19 +16,27 @@ void	quick_to_b(void)
 {
 	t_data	*data;
 	int		i;
+	int		first;
+	int		mid;
+	int		last;
 
 	data = get_data();
 	i = 0;
 	data->chunk /= 2;
+	mid = (data->n_a - data->chunk) + (data->chunk / 2);
+	
 	while (i < data->chunk)
 	{
 		if (data->stack_a[0] >= data->chunk)
 		{
 			push_b();
+			if (data->stack_b[0] < mid)
+				rotate_b(false);
 			i++;
 		}
 		else
 			rotate_a(false);
+
 	}
 }
 
@@ -66,7 +74,7 @@ void	list_moves(void)
 	t_data	*data;
 
 	data = get_data();
-	while (data->chunk > 25)
+	while (data->chunk > 3)
 		quick_to_b();
 	swap_sort_a();
 	insert_to_a();
