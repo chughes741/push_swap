@@ -22,6 +22,24 @@ int	count_args(char **argv)
 	return (i);
 }
 
+void	pre_sorted(void)
+{
+	t_data	*data;
+	int		n;
+
+	data = get_data();
+	n = 0;
+	while (++n < data->size)
+	{
+		if (data->args[n] <= data->args[n - 1])
+		{
+			del_data();
+			exit(1);
+		}
+	}
+	return ;
+}
+
 void	set_up(char **argv)
 {
 	t_data	*data;
@@ -33,6 +51,7 @@ void	set_up(char **argv)
 	data->chunk = data->size;
 	data->stack_a = ft_calloc(data->n_a, sizeof(int));
 	data->stack_b = ft_calloc(data->n_a, sizeof(int));
+	pre_sorted();
 	hash_array();
 	return ;
 }
