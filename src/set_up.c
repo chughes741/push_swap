@@ -12,14 +12,24 @@
 
 #include "../include/push_swap.h"
 
-void	set_up(int argc, char **argv)
+int	count_args(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+		i++;
+	return (i);
+}
+
+void	set_up(char **argv)
 {
 	t_data	*data;
 
 	data = get_data();
-	data->args = parse_args(argc, argv);
-	data->size = argc - 1;
-	data->n_a = data->size; // TODO inputs as single string
+	data->args = parse_args(count_args(argv), argv);
+	data->size = count_args(argv);
+	data->n_a = data->size;
 	data->chunk = data->size;
 	data->stack_a = ft_calloc(data->n_a, sizeof(int));
 	data->stack_b = ft_calloc(data->n_a, sizeof(int));

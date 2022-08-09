@@ -14,8 +14,13 @@
 
 int	main(int argc, char *argv[])
 {
-	input_check(argc, argv); // TODO sort out input check
-	set_up(argc, argv);
+	char	**input;
+	if (argc == 2)
+		input = ft_split(argv[1], ' ');
+	else
+		input = argv;
+	input_check(input);
+	set_up(input);
 	list_moves();
 	del_data();
 	return (0);

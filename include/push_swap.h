@@ -47,13 +47,14 @@ void	r_rotate_b(bool both);
 void	r_rotate_both(void);
 
 // Setup and background infrastructure
-void	input_check(int argc, char **argv);
+void	input_check(char **argv);
 t_data	*get_data(void);
-void	set_up(int argc, char **argv);
+void	set_up(char **argv);
 array	parse_args(int argc, char **argv);
 void	hash_array(void);
 void	list_moves(void);
 void	del_data(void);
+int		count_args(char **argv);
 
 // Sorting tools
 bool	finished(void);

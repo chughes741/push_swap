@@ -12,14 +12,30 @@
 
 #include "../include/push_swap.h"
 
-static int	valid_int(char **argv)
+static int	too_long(char *arg)
 {
-	if (argv[0])
-		return (0);
+	if (arg[0] == '-')
+	{
+		if (ft_strlen(arg) > 11)
+			return (1);
+		else if (ft_strlen(arg) < 11)
+			return (0);
+		else if (ft_strncmp(arg, "2147483648", 10))
+			return (1);
+	}
+	else
+	{
+		if (ft_strlen(arg) > 10)
+			return (1);
+		else if (ft_strlen(arg) < 10)
+			return (0);
+		else if (ft_strncmp(arg, "2147483647", 10))
+			return (1);
+	}
 	return (0);
 }
 
-static int	dupe_input(char **argv)
+static int	valid_int(char **argv)
 {
 	int	i;
 	int	j;
@@ -27,32 +43,49 @@ static int	dupe_input(char **argv)
 	i = 0;
 	while (argv[++i])
 	{
-		j = i;
-		while (argv[++j])
+		if (too_long(argv[i]))
+			return (1);
+		j = -1;
+		while (argv[i][++j])
 		{
-			if (ft_strcmp(argv[i], argv[j]))
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-')
 				return (1);
 		}
 	}
 	return (0);
 }
 
-void	input_check(int argc, char **argv)
+static int duplicates(char **argv)
 {
-	int	err;
+	int	i;
+	int	j;
 
-	err = 0;
-	if (err == 0)
-		return ;
-	if (argc <= 1)
-		err = 1;
+	i = -1;
+	while (argv[++i])
+	{
+		j = i;
+		while (argv[++j])
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return (1);
+		}
+	}
+	return (0);
+}
+
+void	input_check(char **argv)
+{
+	if (count_args(argv) <= 1)
+		exit(0);
 	if (valid_int(argv))
-		err = 2;
-	if (dupe_input(argv))
-		err = 3;
-	if (err > 1)
-		err = printf("Error\n");
-	if (err != 0)
-		exit (1);
+	{
+		printf("Error\n");
+		exit(1);
+	}
+	if (duplicates(argv))
+	{
+		printf("Error\n");
+		exit(1);
+	}
 	return ;
 }
