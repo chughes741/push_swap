@@ -13,7 +13,7 @@
 		"files.associations": {
 			"limits.h": "c"
 		},
-		"editor.fontFamily": "MesloLGS, Menlo, Monaco, 'Courier New', monospace"
+		"editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace"
 	},
 	"launch": {
 		"version": "0.2.0",
