@@ -18,7 +18,7 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 		input = ft_split(argv[1], ' ');
 	else
-		input = argv;
+		input = &argv[1];
 	input_check(input);
 	set_up(input);
 	list_moves();
