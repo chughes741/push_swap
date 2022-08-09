@@ -32,12 +32,10 @@ void	pre_sorted(void)
 	while (++n < data->size)
 	{
 		if (data->args[n] <= data->args[n - 1])
-		{
-			del_data();
-			exit(1);
-		}
+			return ;
 	}
-	return ;
+	del_data();
+	exit(1);
 }
 
 void	set_up(char **argv)
