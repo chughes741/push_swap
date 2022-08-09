@@ -19,7 +19,7 @@ array	parse_args(int argc, char **argv)
 
 	i = -1;
 	unsorted_set = ft_calloc(argc, sizeof(int));
-	while (argv[++i] && i < argc - 1)
+	while (argv[++i] && i < argc)
 		unsorted_set[i] = ft_atoi(argv[i]);
 	return (unsorted_set);
 }
