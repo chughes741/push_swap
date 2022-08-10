@@ -40,9 +40,11 @@ static int	valid_int(char **argv)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = -1;
 	while (argv[++i])
 	{
+		if (argv[i][0] == '-' && ft_strlen(argv[i]) == 1)
+			return (1);
 		if (too_long(argv[i]))
 			return (1);
 		j = -1;
@@ -75,7 +77,7 @@ static int duplicates(char **argv)
 
 void	input_check(char **argv)
 {
-	if (count_args(argv) <= 1)
+	if (count_args(argv) < 1)
 		exit(0);
 	if (valid_int(argv))
 	{
