@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   finished.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:09:57 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/27 16:10:01 by chughes          ###   ########.fr       */
@@ -27,4 +27,3 @@ bool	finished(void)
 	}
 	return (true);
 }
-

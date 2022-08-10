@@ -15,8 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdarg.h> // Not sure if included in stdlib.h
-# include <string.h> // Not sure if needed
+# include <stdarg.h>
+# include <string.h>
 
 typedef struct s_list
 {
@@ -81,20 +81,20 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
-int			ft_printf(const char *form, ...);
-t_mod		*ft_get_mods(char *format);
-void		ft_print_arg(t_mod *mods, va_list args, int *count);
-char		*ft_itox(int nbr);
-char		*ft_utoa(unsigned int nbr);
-char		*ft_ptoa(uintptr_t nbr);
-char		*ft_str_append(char *s1, char *s2);
-char		*ft_format(t_mod *mod, char *str);
-char		*ft_chr_append(int c, char *str);
-void		ft_left_justify(char *str);
-void		ft_strupper(char *str);
-void		ft_space_to_zero(char *str);
-char		*ft_format_str(char *str, t_mod *mod);
-char		*ft_min_width(char *str, int width, int zero);
-char		*ft_neg_pop(char *str, _Bool *neg);
+int		ft_printf(const char *form, ...);
+t_mod	*ft_get_mods(char *format);
+void	ft_print_arg(t_mod *mods, va_list args, int *count);
+char	*ft_itox(int nbr);
+char	*ft_utoa(unsigned int nbr);
+char	*ft_ptoa(uintptr_t nbr);
+char	*ft_str_append(char *s1, char *s2);
+char	*ft_format(t_mod *mod, char *str);
+char	*ft_chr_append(int c, char *str);
+void	ft_left_justify(char *str);
+void	ft_strupper(char *str);
+void	ft_space_to_zero(char *str);
+char	*ft_format_str(char *str, t_mod *mod);
+char	*ft_min_width(char *str, int width, int zero);
+char	*ft_neg_pop(char *str, _Bool *neg);
 
 #endif

@@ -15,6 +15,7 @@
 int	main(int argc, char *argv[])
 {
 	char	**input;
+
 	if (argc == 2)
 		input = ft_split(argv[1], ' ');
 	else

@@ -55,7 +55,7 @@ static int	valid_int(char **argv)
 	return (0);
 }
 
-static int duplicates(char **argv)
+static int	duplicates(char **argv)
 {
 	int	i;
 	int	j;

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   hash_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:53:39 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/20 14:53:40 by chughes          ###   ########.fr       */

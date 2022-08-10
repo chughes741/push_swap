@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:59:50 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/22 12:59:52 by chughes          ###   ########.fr       */
@@ -19,7 +19,6 @@ void	push_a(void)
 	int		i;
 
 	data = get_data();
-	print_stacks(); // ! DEBUG
 	if (data->n_b == 0)
 		return ;
 	if (data->n_a != 0)
@@ -34,9 +33,8 @@ void	push_a(void)
 		data->stack_b[i] = data->stack_b[i + 1];
 	data->n_a += 1;
 	data->n_b -= 1;
-	print_stacks(); // ! DEBUG
 	printf("pa\n");
-	return ;	
+	return ;
 }
 
 // Push top element from stack_a to stack_b
@@ -46,7 +44,6 @@ void	push_b(void)
 	int		i;
 
 	data = get_data();
-	print_stacks(); // ! DEBUG
 	if (data->n_a == 0)
 		return ;
 	if (data->n_b != 0)
@@ -61,7 +58,6 @@ void	push_b(void)
 		data->stack_a[i] = data->stack_a[i + 1];
 	data->n_a -= 1;
 	data->n_b += 1;
-	print_stacks(); // ! DEBUG
 	printf("pb\n");
-	return ;	
+	return ;
 }
