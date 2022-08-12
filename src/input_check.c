@@ -43,14 +43,14 @@ static int	valid_int(char **argv)
 	i = -1;
 	while (argv[++i])
 	{
-		if (argv[i][0] == '-' && ft_strlen(argv[i]) == 1)
-			return (1);
 		if (too_long(argv[i]))
 			return (1);
 		j = -1;
+		if (argv[i][0] == '-' && ft_strlen(argv[i]) > 1)
+			j++;
 		while (argv[i][++j])
 		{
-			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-')
+			if (!ft_isdigit(argv[i][j]))
 				return (1);
 		}
 	}
