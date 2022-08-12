@@ -19,7 +19,6 @@ void	push_a(void)
 	int		i;
 
 	data = get_data();
-	print_stacks(); // ! DEBUG
 	if (data->n_b == 0)
 		return ;
 	if (data->n_a != 0)
@@ -34,7 +33,6 @@ void	push_a(void)
 		data->stack_b[i] = data->stack_b[i + 1];
 	data->n_a += 1;
 	data->n_b -= 1;
-	print_stacks(); // ! DEBUG
 	printf("pa\n");
 	return ;	
 }
@@ -46,7 +44,6 @@ void	push_b(void)
 	int		i;
 
 	data = get_data();
-	print_stacks(); // ! DEBUG
 	if (data->n_a == 0)
 		return ;
 	if (data->n_b != 0)
@@ -61,7 +58,6 @@ void	push_b(void)
 		data->stack_a[i] = data->stack_a[i + 1];
 	data->n_a -= 1;
 	data->n_b += 1;
-	print_stacks(); // ! DEBUG
 	printf("pb\n");
 	return ;	
 }

@@ -20,7 +20,6 @@ void	rotate_a(bool both)
 	int	i;
 
 	data = get_data();
-	print_stacks(); // ! DEBUG
 	if (data->n_a <= 1)
 		return ;
 	i = -1;
@@ -28,7 +27,6 @@ void	rotate_a(bool both)
 	while (++i < data->n_a - 1)
 		data->stack_a[i] = data->stack_a[i + 1];
 	data->stack_a[i] = temp;
-	print_stacks(); // ! DEBUG
 	if (!both)
 		printf("ra\n");
 	return ;
@@ -42,7 +40,6 @@ void	rotate_b(bool both)
 	int	i;
 
 	data = get_data();
-	print_stacks(); // ! DEBUG
 	if (data->n_b <= 1)
 		return ;
 	i = -1;
@@ -50,7 +47,6 @@ void	rotate_b(bool both)
 	while (++i < data->n_b - 1)
 		data->stack_b[i] = data->stack_b[i + 1];
 	data->stack_b[i] = temp;
-	print_stacks(); // ! DEBUG
 	if (!both)
 		printf("rb\n");
 	return ;
@@ -58,10 +54,8 @@ void	rotate_b(bool both)
 	
 void	rotate_both(void)
 {
-	print_stacks(); // ! DEBUG
 	rotate_a(1);
 	rotate_b(1);
-	print_stacks(); // ! DEBUG
 	printf("rr\n");
 	return ;
 }

@@ -63,7 +63,4 @@ int		highest_b(void);
 // String tools
 int		ft_strcmp(const char *str1, const char *str2);
 
-// DEBUG and testing
-void	print_stacks(void); // TODO rmv bf submission
-
 #endif
