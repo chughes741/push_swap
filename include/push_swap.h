@@ -17,21 +17,18 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdbool.h>
-#include <unistd.h> // TODO remove before submission
-
-typedef int *array;
 
 typedef struct t_data {
-	array	args;
-	int		size;
-	int		chunk;
-	array	stack_a;
-	int		top_a;
-	int		n_a;
-	array	stack_b;
-	int		top_b;
-	int		n_b;
-}			t_data;
+	int	*args;
+	int	size;
+	int	chunk;
+	int	*stack_a;
+	int	top_a;
+	int	n_a;
+	int	*stack_b;
+	int	top_b;
+	int	n_b;
+}		t_data;
 
 // Movements for the int array
 void	push_a(void);
@@ -50,7 +47,7 @@ void	r_rotate_both(void);
 void	input_check(char **argv);
 t_data	*get_data(void);
 void	set_up(char **argv);
-array	parse_args(int argc, char **argv);
+int		*parse_args(int argc, char **argv);
 void	hash_array(void);
 void	list_moves(void);
 void	del_data(void);
