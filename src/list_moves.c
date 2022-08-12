@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   list_moves.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:00:14 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/20 15:00:16 by chughes          ###   ########.fr       */
@@ -22,7 +22,6 @@ void	quick_to_b(void)
 	i = 0;
 	data->chunk /= 2;
 	mid = (data->n_a - data->chunk) + (data->chunk / 2);
-
 	while (i < data->chunk)
 	{
 		if (data->stack_a[0] >= data->chunk)
@@ -36,7 +35,6 @@ void	quick_to_b(void)
 		}
 		else
 			rotate_a(false);
-
 	}
 }
 
@@ -45,7 +43,7 @@ void	swap_sort_a(void)
 	t_data	*data;
 
 	data = get_data();
-	while(!finished())
+	while (!finished())
 	{
 		if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1])
 			swap_a(false);
@@ -87,7 +85,6 @@ void	list_moves(void)
 	{
 		while (data->stack_a[0])
 			r_rotate_a(false);
-
 	}
 	return ;
 }

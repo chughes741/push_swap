@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:00:01 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/22 13:00:03 by chughes          ###   ########.fr       */
@@ -16,7 +16,7 @@
 void	swap_a(bool both)
 {
 	t_data	*data;
-	int	temp;
+	int		temp;
 
 	data = get_data();
 	if (data->n_a <= 1)
@@ -33,7 +33,7 @@ void	swap_a(bool both)
 void	swap_b(bool both)
 {
 	t_data	*data;
-	int	temp;
+	int		temp;
 
 	data = get_data();
 	if (data->n_b <= 1)

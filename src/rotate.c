@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:00:09 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/22 13:00:11 by chughes          ###   ########.fr       */
@@ -16,8 +16,8 @@
 void	rotate_a(bool both)
 {
 	t_data	*data;
-	int	temp;
-	int	i;
+	int		temp;
+	int		i;
 
 	data = get_data();
 	if (data->n_a <= 1)
@@ -36,8 +36,8 @@ void	rotate_a(bool both)
 void	rotate_b(bool both)
 {
 	t_data	*data;
-	int	temp;
-	int	i;
+	int		temp;
+	int		i;
 
 	data = get_data();
 	if (data->n_b <= 1)
@@ -51,7 +51,7 @@ void	rotate_b(bool both)
 		printf("rb\n");
 	return ;
 }
-	
+
 void	rotate_both(void)
 {
 	rotate_a(1);

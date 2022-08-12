@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   revrotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:12:54 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/22 13:12:56 by chughes          ###   ########.fr       */

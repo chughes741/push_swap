@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   high_low.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chughes <marvin@42quebec.com>              +#+  +:+       +#+        */
+/*   By: chughes <chughes@student.42quebec.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:13:35 by chughes           #+#    #+#             */
 /*   Updated: 2022/06/27 16:13:38 by chughes          ###   ########.fr       */
